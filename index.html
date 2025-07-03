@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Auto Insurance Center - Bill Layne Insurance Agency</title>
+    <meta name="description" content="Your complete auto insurance resource center in North Carolina. Get quotes, compare coverage, find discounts, and access all major insurance companies.">
+    
+    <!-- Using the modern ethereal blog style from your claims page -->
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap');
+
+        :root {
+            /* Brand Colors - Enhanced palette */
+            --color-primary: #1e3a8a;
+            --color-primary-light: #3b82f6;
+            --color-primary-glow: #60a5fa;
+            --color-accent: #10b981;
+            --color-accent-light: #34d399;
+            --color-gradient-1: #667eea;
+            --color-gradient-2: #764ba2;
+            --color-gradient-3: #f093fb;
+            --color-gradient-4: #4facfe;
+            
+            /* Neutrals */
+            --color-background: #ffffff;
+            --color-surface: #f8fafc;
+            --color-surface-glass: rgba(248, 250, 252, 0.8);
+            --color-text: #1e293b;
+            --color-text-secondary: #64748b;
+            --color-text-light: #94a3b8;
+            
+            /* UI Colors */
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            --color-error: #ef4444;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            
+            /* Typography */
+            --font-serif: 'Montserrat', -apple-system, sans-serif;
+            --font-sans: 'Open Sans', -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography Scale */
+            --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
+            --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
+            --font-size-base: clamp(1rem, 3vw, 1.125rem);
+            --font-size-lg: clamp(1.25rem, 4vw, 1.5rem);
+            --font-size-xl: clamp(1.5rem, 5vw, 2rem);
+            --font-size-2xl: clamp(2rem, 6vw, 3rem);
+            --font-size-3xl: clamp(2.5rem, 7vw, 4rem);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+            --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+            --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Animations */
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: floatingGradient 20s ease-in-out infinite;
+        }
+
+        @keyframes floatingGradient {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(20px) rotate(-1deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: var(--color-surface-glass);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: var(--transition-base);
+        }
+
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary-light), var(--color-accent-light), transparent);
+            opacity: 0.5;
+            animation: shimmerLine 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmerLine {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .navbar-content {
+            padding: var(--space-lg) 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .navbar-brand h2 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            color: var(--color-primary);
+            margin: 0;
+            letter-spacing: -0.025em;
+        }
+
+        .navbar-brand span {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-lg);
+        }
+
+        .phone-link {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: var(--font-size-lg);
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+            position: relative;
+        }
+
+        .phone-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transition: var(--transition-base);
+        }
+
+        .phone-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(226, 232, 240, 0.80) 100%), url('https://i.imgur.com/AgeT7LI.png') center/cover;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-2xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-2xl);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+            border: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn--primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn--primary:hover::before {
+            left: 100%;
+        }
+
+        .btn--secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn--secondary:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn--lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: var(--font-size-lg);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--space-3xl) 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--color-surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary-light), transparent);
+            opacity: 0.6;
+        }
+
+        .section-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        /* Cards */
+        .card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(30, 58, 138, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card ul {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card .btn {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Icon cards */
+        .icon-card {
+            text-align: center;
+        }
+
+        .icon-card .icon {
+            font-size: 48px;
+            margin-bottom: var(--space-md);
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .icon-card ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Feature boxes */
+        .feature-box {
+            background: linear-gradient(135deg, var(--color-surface) 0%, rgba(30, 58, 138, 0.05) 100%);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--color-primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-box h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Coverage table */
+        .coverage-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-lg);
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .coverage-table th,
+        .coverage-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .coverage-table th {
+            background: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .coverage-table tr:hover {
+            background: var(--color-surface);
+        }
+
+        /* FAQ section */
+        .faq-item {
+            background: var(--color-background);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            transition: var(--transition-base);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: var(--space-lg);
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-text);
+            transition: var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: var(--color-surface);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            display: none;
+        }
+
+        .faq-question[aria-expanded="true"] + .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer h3 {
+            font-family: var(--font-serif);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: var(--transition-base);
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            background: var(--color-background);
+            color: var(--color-text);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition-base);
+            z-index: 9999;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Section images */
+        .section-image {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .section-image img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .section-image img.icon-set {
+            max-width: 600px;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .navbar-content {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--space-md) 0;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+                background-attachment: scroll;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .gradient-text {
+                font-size: 2rem;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            #get-quote > div > div:last-child {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            #get-quote img {
+                margin-top: 2rem;
+            }
+            
+            #nc-requirements {
+                background-attachment: scroll !important;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        [data-delay="1"] { animation-delay: 0.1s; }
+        [data-delay="2"] { animation-delay: 0.2s; }
+        [data-delay="3"] { animation-delay: 0.3s; }
+        [data-delay="4"] { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="navbar-brand">
+                    <h2>Bill Layne Insurance</h2>
+                    <span>Auto Insurance Center</span>
+                </div>
+                <div class="navbar-cta">
+                    <a href="tel:3368351993" class="phone-link">📞 (336) 835-1993</a>
+                    <a href="#get-quote" class="btn btn--primary">Get Free Quote</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="gradient-text">North Carolina Auto Insurance Center</h1>
+                <p class="hero-subtitle">Compare rates, find discounts, and get the coverage you need. Your complete resource for auto insurance in North Carolina.</p>
+                <div class="hero-buttons">
+                    <a href="#get-quote" class="btn btn--primary btn--lg">🚗 Get Instant Quote</a>
+                    <a href="#compare" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);">📊 Compare Coverage</a>
+                    <a href="#discounts" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, var(--color-warning) 0%, #fbbf24 100%);">💰 Find Discounts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up" data-delay="1">
+                    <div class="stat-number">$1,427</div>
+                    <div class="stat-label">Average NC Annual Premium</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="2">
+                    <div class="stat-number">50/100/50</div>
+                    <div class="stat-label">NC Minimum Coverage</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="3">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Insurance Companies</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="4">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Claims Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Types Section -->
+    <section id="coverage">
+        <div class="container">
+            <div class="section-header">
+                <h2>🛡️ Understanding Auto Insurance Coverage</h2>
+                <p>Know what you're buying and what protection you need in North Carolina</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/9Y9gMu9.png" alt="Auto Insurance Coverage Types">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card icon-card">
+                    <span class="icon">🚗</span>
+                    <h3>Liability Coverage</h3>
+                    <p><strong>Required in NC</strong><br>
+                    Covers damage and injuries you cause to others. NC minimum: 50/100/50</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>$50,000 bodily injury per person</li>
+                        <li>$100,000 bodily injury per accident</li>
+                        <li>$50,000 property damage</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">💥</span>
+                    <h3>Collision Coverage</h3>
+                    <p><strong>Optional but Recommended</strong><br>
+                    Pays for damage to your car from accidents, regardless of fault.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Choose your deductible ($250-$1,000)</li>
+                        <li>Required if you have a loan</li>
+                        <li>Covers hit-and-run damage</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🌪️</span>
+                    <h3>Comprehensive Coverage</h3>
+                    <p><strong>Protection Beyond Accidents</strong><br>
+                    Covers theft, vandalism, weather damage, and animal collisions.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Glass repair often no deductible</li>
+                        <li>Covers natural disasters</li>
+                        <li>Rental car theft protection</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🏥</span>
+                    <h3>Medical Payments</h3>
+                    <p><strong>Covers You & Passengers</strong><br>
+                    Pays medical expenses regardless of fault, supplements health insurance.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Typical limits: $1,000-$10,000</li>
+                        <li>No deductible required</li>
+                        <li>Covers funeral expenses</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🚫</span>
+                    <h3>Uninsured Motorist</h3>
+                    <p><strong>Required in NC</strong><br>
+                    Protects you when hit by uninsured or hit-and-run drivers.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Must match liability limits</li>
+                        <li>Covers lost wages</li>
+                        <li>Stacks with health insurance</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🚙</span>
+                    <h3>Rental & Towing Reimbursement</h3>
+                    <p><strong>Convenience Coverage</strong><br>
+                    Rental car coverage and towing expense reimbursement.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>$30-50/day rental coverage</li>
+                        <li>Towing reimbursement up to $100+</li>
+                        <li>Pay upfront, then file for reimbursement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discounts Section -->
+    <section id="discounts">
+        <div class="container">
+            <div class="section-header">
+                <h2>💰 Save Money on Auto Insurance</h2>
+                <p>Common discounts that can reduce your premium by 5-40%</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/9vfvAK7.png" alt="Auto Insurance Discounts">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>🎓 Driver Discounts</h3>
+                    <ul>
+                        <li><strong>Good Student:</strong> 5-25% off (3.0+ GPA)</li>
+                        <li><strong>Defensive Driving:</strong> 5-10% off</li>
+                        <li><strong>Good Driver:</strong> 10-40% off (no accidents)</li>
+                        <li><strong>Low Mileage:</strong> 5-30% off (<7,500 miles/year)</li>
+                        <li><strong>Senior Citizen:</strong> 5-10% off (55+)</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>🚗 Vehicle Discounts</h3>
+                    <ul>
+                        <li><strong>Anti-Theft Device:</strong> 5-15% off</li>
+                        <li><strong>Safety Features:</strong> 5-30% off</li>
+                        <li><strong>New Car:</strong> 10-15% off</li>
+                        <li><strong>Electric/Hybrid:</strong> 5-10% off</li>
+                        <li><strong>Daytime Running Lights:</strong> 3-5% off</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 Policy Discounts</h3>
+                    <ul>
+                        <li><strong>Multi-Policy Bundle:</strong> 5-25% off</li>
+                        <li><strong>Multi-Car:</strong> 10-25% off</li>
+                        <li><strong>Pay in Full:</strong> 5-10% off</li>
+                        <li><strong>Paperless/Auto-Pay:</strong> 3-5% off</li>
+                        <li><strong>Early Signing:</strong> 5-10% off</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-box" style="margin-top: 2rem;">
+                <h4>💡 Pro Tip: Stack Your Discounts</h4>
+                <p>Most insurers allow multiple discounts. A good student with a safe car who bundles policies can save 40% or more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NC Requirements Section -->
+    <section id="nc-requirements" style="background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://i.imgur.com/TUYCLRb.png') center/cover; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>📋 North Carolina Auto Insurance Requirements</h2>
+                <p>What the law requires and what experts recommend</p>
+            </div>
+            
+            <table class="coverage-table">
+                <thead>
+                    <tr>
+                        <th>Coverage Type</th>
+                        <th>NC Minimum</th>
+                        <th>Recommended</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bodily Injury (per person)</strong></td>
+                        <td>$50,000</td>
+                        <td>$100,000+</td>
+                        <td>Medical bills can exceed $50k quickly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bodily Injury (per accident)</strong></td>
+                        <td>$100,000</td>
+                        <td>$300,000+</td>
+                        <td>Multiple injuries drain coverage fast</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Property Damage</strong></td>
+                        <td>$50,000</td>
+                        <td>$100,000+</td>
+                        <td>New cars often cost $40k+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uninsured Motorist BI</strong></td>
+                        <td>$50,000/$100,000</td>
+                        <td>Match liability</td>
+                        <td>1 in 8 NC drivers uninsured</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uninsured Motorist PD</strong></td>
+                        <td>Not required</td>
+                        <td>$25,000+</td>
+                        <td>Covers hit-and-run damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medical Payments</strong></td>
+                        <td>Not required</td>
+                        <td>$5,000+</td>
+                        <td>Covers deductibles & copays</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="feature-box" style="margin-top: 2rem;">
+                <h4>⚠️ Important NC Insurance Laws</h4>
+                <ul>
+                    <li>You must carry proof of insurance at all times while driving</li>
+                    <li>Driving without insurance: $50-$150 fine + license suspension</li>
+                    <li>You have 30 days to notify DMV of any insurance changes</li>
+                    <li>NC uses a "fault" system - at-fault driver pays for damages</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>📚 Helpful Resources</h2>
+                <p>Tools and information to help you make informed decisions</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/dQ78lGJ.png" alt="Insurance Resources Icons" class="icon-set">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>🏛️ NC Department of Insurance</h3>
+                    <p>Official state resource for insurance questions, complaints, and regulations.</p>
+                    <p><strong>Consumer Services:</strong><br>855-408-1212</p>
+                    <a href="https://www.ncdoi.gov" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Visit NCDOI</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🚗 NC Rate Bureau</h3>
+                    <p>Sets baseline rates for auto insurance in North Carolina. Check proposed rate changes.</p>
+                    <p><strong>Rate Information:</strong><br>919-783-9790</p>
+                    <a href="https://www.ncrb.org/ncrb" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Check Rates</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📊 Coverage Calculator</h3>
+                    <p>Calculate how much coverage you need based on your assets and risk factors.</p>
+                    <p><strong>Free Tool:</strong><br>Personalized recommendations</p>
+                    <a href="#calculator" class="btn btn--primary" style="margin-top: 1rem;">Calculate Coverage</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🚔 DMV Services</h3>
+                    <p>Vehicle registration, license renewal, and driving records.</p>
+                    <p><strong>Customer Service:</strong><br>919-715-7000</p>
+                    <a href="https://www.ncdot.gov/dmv/offices-services/online/Pages/default.aspx" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Visit NC DMV</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📱 Mobile Apps</h3>
+                    <p>Download insurer apps for digital ID cards, claims filing, and policy management.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Digital insurance cards legal in NC</li>
+                        <li>File claims with photos</li>
+                        <li>Track claim status</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>💳 Pay Insurance Lapse Fine</h3>
+                    <p>If you've had a lapse in auto insurance coverage, you must pay the required fine here.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Required for coverage lapses</li>
+                        <li>Secure online payment</li>
+                        <li>Avoid license suspension</li>
+                    </ul>
+                    <a href="https://payments.ncdot.gov/auth" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Pay Lapse Fine</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>❓ Frequently Asked Questions</h2>
+                <p>Common questions about auto insurance in North Carolina</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>How can I lower my auto insurance rates?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>There are several ways to reduce your auto insurance premiums:</p>
+                        <ul>
+                            <li><strong>Shop around:</strong> Compare quotes from multiple insurers annually</li>
+                            <li><strong>Increase deductibles:</strong> Higher deductibles = lower premiums</li>
+                            <li><strong>Bundle policies:</strong> Combine auto with home/renters insurance</li>
+                            <li><strong>Maintain good credit:</strong> Better credit often means lower rates</li>
+                            <li><strong>Drive safely:</strong> Avoid tickets and accidents</li>
+                            <li><strong>Ask about discounts:</strong> Many go unclaimed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>What factors affect my insurance rates in NC?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>North Carolina insurers consider many factors when setting rates:</p>
+                        <ul>
+                            <li><strong>Driving record:</strong> Accidents and violations increase rates</li>
+                            <li><strong>Age and experience:</strong> Younger drivers pay more</li>
+                            <li><strong>Location:</strong> Urban areas typically cost more</li>
+                            <li><strong>Vehicle type:</strong> Sports cars and luxury vehicles cost more</li>
+                            <li><strong>Credit score:</strong> Better credit usually means lower rates</li>
+                            <li><strong>Annual mileage:</strong> More driving = higher risk</li>
+                            <li><strong>Coverage levels:</strong> More coverage costs more</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>Do I need uninsured motorist coverage if I have health insurance?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes, you should keep uninsured motorist coverage even with health insurance:</strong></p>
+                        <ul>
+                            <li>Covers lost wages your health insurance won't pay</li>
+                            <li>No health insurance deductibles or copays</li>
+                            <li>Covers passengers who might not have health insurance</li>
+                            <li>Provides coverage for pain and suffering</li>
+                            <li>Required by NC law unless rejected in writing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>How do NC insurance points affect my rates?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>NC insurance points can significantly increase your rates:</p>
+                        <ul>
+                            <li><strong>1 point:</strong> 30% rate increase</li>
+                            <li><strong>2 points:</strong> 45% rate increase</li>
+                            <li><strong>3 points:</strong> 60% rate increase</li>
+                            <li><strong>4 points:</strong> 80% rate increase</li>
+                            <li><strong>12 points (DUI):</strong> 340% rate increase</li>
+                        </ul>
+                        <p><strong>Note:</strong> Insurance points are different from DMV license points!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Quote Section -->
+    <section id="get-quote" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">🚗 Ready to Save on Auto Insurance?</h2>
+                <p style="color: white; opacity: 0.95; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Let us help you find the best coverage at the lowest price</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 3rem; max-width: 1000px; margin: 0 auto; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem; color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Get personalized quotes from multiple top-rated insurers in minutes. We'll help you compare coverage and find all available discounts.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="tel:3368351993" class="btn btn--secondary btn--lg">📞 Call (336) 835-1993</a>
+                        <a href="mailto:Save@BillLayneInsurance.com" class="btn btn--secondary btn--lg">✉️ Email for Quote</a>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; color: white; opacity: 0.95;">Office Hours: Monday - Friday, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://i.imgur.com/zsodZcd.png" alt="Get Your Auto Insurance Quote" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Bill Layne Insurance Agency</h3>
+                    <p>Your trusted partner for auto insurance in North Carolina since 1992.</p>
+                    <p>Licensed NC Insurance Agency<br>
+                    Serving Elkin, Mount Airy, and all of NC</p>
+                </div>
+                
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>📞 Phone: <a href="tel:3368351993">(336) 835-1993</a></p>
+                    <p>✉️ Email: <a href="mailto:Save@BillLayneInsurance.com">Save@BillLayneInsurance.com</a></p>
+                    <p>🏢 Address: 1283 N Bridge St<br>Elkin, NC 28621</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="#coverage">Coverage Types</a></p>
+                    <p><a href="#discounts">Available Discounts</a></p>
+                    <p><a href="#resources">Resources</a></p>
+                    <p><a href="https://www.BillLayneInsurance.com" target="_blank">Visit Our Main Site</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bill Layne Insurance Agency. All rights reserved. | Licensed NC Insurance Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Show notification
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            const notificationText = document.getElementById('notification-text');
+            
+            notificationText.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Toggle FAQ
+        function toggleFAQ(button) {
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all cards
+        document.querySelectorAll('.card, .stat-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
