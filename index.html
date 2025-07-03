@@ -692,6 +692,240 @@
             max-width: 600px;
         }
 
+        /* Calculator Modal Styles */
+        .calculator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .calculator-modal.show {
+            display: block;
+        }
+
+        .calculator-container {
+            background: var(--color-background);
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            animation: slideInUp 0.4s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .calculator-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--color-text);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            z-index: 10;
+        }
+
+        .calculator-close:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Calculator Form Styles */
+        .calculator-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            padding: var(--space-2xl);
+            text-align: center;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+
+        .calculator-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .calculator-body {
+            padding: var(--space-2xl);
+        }
+
+        .form-section {
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-2xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+        }
+
+        .form-section h3 {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            margin-bottom: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group small {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            margin-top: var(--space-xs);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            border: none;
+            padding: var(--space-md) var(--space-2xl);
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: var(--radius-2xl);
+            cursor: pointer;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 400px;
+            margin: var(--space-2xl) auto 0;
+            display: block;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Results Section */
+        #calculator-results {
+            display: none;
+            margin-top: var(--space-2xl);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            color: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            text-align: center;
+        }
+
+        .results-body {
+            background: var(--color-surface);
+            padding: var(--space-2xl);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .coverage-recommendation {
+            background: white;
+            border: 2px solid var(--color-accent);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .coverage-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .coverage-item:last-child {
+            border-bottom: none;
+        }
+
+        .coverage-label {
+            font-weight: 500;
+        }
+
+        .coverage-amount {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.125rem;
+        }
+
         /* Mobile responsive */
         @media (max-width: 768px) {
             .navbar-content {
@@ -739,6 +973,30 @@
             
             #nc-requirements {
                 background-attachment: scroll !important;
+            }
+            
+            .calculator-container {
+                margin: 20px;
+                max-width: calc(100% - 40px);
+            }
+            
+            .calculator-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .calculator-body {
+                padding: var(--space-lg);
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
             }
         }
 
@@ -1063,7 +1321,7 @@
                     <h3>📊 Coverage Calculator</h3>
                     <p>Calculate how much coverage you need based on your assets and risk factors.</p>
                     <p><strong>Free Tool:</strong><br>Personalized recommendations</p>
-                    <a href="#calculator" class="btn btn--primary" style="margin-top: 1rem;">Calculate Coverage</a>
+                    <button onclick="openCalculatorModal()" class="btn btn--primary" style="margin-top: 1rem;">Calculate Coverage</button>
                 </div>
                 
                 <div class="card">
@@ -1310,6 +1568,319 @@
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
         });
+        
+        // Calculator Modal Functions
+        function openCalculatorModal() {
+            document.getElementById('calculatorModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeCalculatorModal() {
+            document.getElementById('calculatorModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            document.getElementById('calculatorForm').reset();
+            document.getElementById('calculator-results').style.display = 'none';
+        }
+        
+        // Close modal on outside click
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('calculatorModal');
+            if (event.target === modal) {
+                closeCalculatorModal();
+            }
+        });
+        
+        // Calculator Functions
+        function calculateCoverage() {
+            // Get form values
+            const age = parseInt(document.getElementById('calc-age').value);
+            const income = parseInt(document.getElementById('calc-income').value);
+            const drivers = parseInt(document.getElementById('calc-drivers').value);
+            const vehicles = parseInt(document.getElementById('calc-vehicles').value);
+            const homeValue = parseInt(document.getElementById('calc-home-value').value) || 0;
+            const savings = parseInt(document.getElementById('calc-savings').value) || 0;
+            const vehicleValue = parseInt(document.getElementById('calc-vehicle-value').value) || 0;
+            const otherAssets = parseInt(document.getElementById('calc-other-assets').value) || 0;
+            
+            // Calculate total assets
+            const totalAssets = homeValue + savings + vehicleValue + otherAssets;
+            
+            // Get risk factors
+            const hasTeenDriver = document.getElementById('calc-teen-driver').checked;
+            const hasLongCommute = document.getElementById('calc-long-commute').checked;
+            const hasBusinessUse = document.getElementById('calc-business-use').checked;
+            const hasTowing = document.getElementById('calc-towing').checked;
+            const hasRideshare = document.getElementById('calc-rideshare').checked;
+            const hasFinanced = document.getElementById('calc-financed').checked;
+            const hasNewCar = document.getElementById('calc-new-car').checked;
+            const hasLuxury = document.getElementById('calc-luxury').checked;
+            
+            // Calculate risk multiplier
+            let riskMultiplier = 1;
+            if (hasTeenDriver) riskMultiplier += 0.3;
+            if (hasBusinessUse) riskMultiplier += 0.2;
+            if (hasRideshare) riskMultiplier += 0.4;
+            if (hasLongCommute) riskMultiplier += 0.1;
+            if (hasTowing) riskMultiplier += 0.15;
+            if (hasLuxury) riskMultiplier += 0.2;
+            
+            // Calculate recommended coverage based on assets and income
+            let biPerson, biAccident, pd, medPay;
+            
+            // Bodily Injury recommendations
+            if (totalAssets < 100000) {
+                biPerson = 100000;
+                biAccident = 300000;
+            } else if (totalAssets < 300000) {
+                biPerson = 250000;
+                biAccident = 500000;
+            } else if (totalAssets < 500000) {
+                biPerson = 500000;
+                biAccident = 1000000;
+            } else {
+                biPerson = 1000000;
+                biAccident = 1000000;
+            }
+            
+            // Adjust for risk factors
+            if (riskMultiplier > 1.5 && biPerson < 500000) {
+                biPerson = Math.min(biPerson * 2, 1000000);
+                biAccident = Math.min(biAccident * 1.5, 1000000);
+            }
+            
+            // Property Damage recommendations
+            if (totalAssets < 200000) {
+                pd = 100000;
+            } else if (totalAssets < 500000) {
+                pd = 250000;
+            } else {
+                pd = 500000;
+            }
+            
+            // Medical Payments recommendations
+            if (drivers > 3 || hasTeenDriver) {
+                medPay = 10000;
+            } else {
+                medPay = 5000;
+            }
+            
+            // Update UI with recommendations
+            document.getElementById('rec-bi-person').textContent = '$' + biPerson.toLocaleString();
+            document.getElementById('rec-bi-accident').textContent = '$' + biAccident.toLocaleString();
+            document.getElementById('rec-pd').textContent = '$' + pd.toLocaleString();
+            document.getElementById('rec-um').textContent = biPerson/1000 + '/' + biAccident/1000 + '/50';
+            document.getElementById('rec-med').textContent = '$' + medPay.toLocaleString();
+            
+            // Update explanations
+            const assetExplanation = document.getElementById('asset-explanation');
+            if (totalAssets > 500000) {
+                assetExplanation.textContent = `With assets totaling $${totalAssets.toLocaleString()}, you have substantial wealth to protect. Consider maximum liability limits and an umbrella policy for additional protection.`;
+            } else if (totalAssets > 200000) {
+                assetExplanation.textContent = `Your assets of $${totalAssets.toLocaleString()} require solid liability protection. The recommended coverage should protect your home and savings from lawsuits.`;
+            } else {
+                assetExplanation.textContent = `With assets of $${totalAssets.toLocaleString()}, standard coverage levels should provide adequate protection, but don't go with just state minimums.`;
+            }
+            
+            const vehicleExplanation = document.getElementById('vehicle-explanation');
+            if (hasFinanced || hasNewCar) {
+                vehicleExplanation.textContent = 'Since you have financed or newer vehicles, comprehensive and collision coverage is essential. Consider a $500-$1,000 deductible to balance premium costs.';
+            } else if (vehicleValue > 10000) {
+                vehicleExplanation.textContent = `With vehicles worth $${vehicleValue.toLocaleString()}, comprehensive and collision coverage is recommended to protect your investment.`;
+            } else {
+                vehicleExplanation.textContent = 'For older vehicles, you might consider liability-only coverage, but evaluate if comprehensive/collision is worth it based on your budget.';
+            }
+            
+            // Show results
+            document.getElementById('calculator-results').style.display = 'block';
+            document.getElementById('calculator-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     </script>
+
+    <!-- Calculator Modal -->
+    <div id="calculatorModal" class="calculator-modal">
+        <div class="calculator-container">
+            <button class="calculator-close" onclick="closeCalculatorModal()">×</button>
+            
+            <div class="calculator-header">
+                <h2>Auto Insurance Coverage Calculator</h2>
+                <p>Get personalized coverage recommendations based on your financial situation</p>
+            </div>
+            
+            <div class="calculator-body">
+                <form id="calculatorForm">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><span>👤</span> Personal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="calc-age">Your Age</label>
+                                <input type="number" id="calc-age" min="16" max="100" value="35" required>
+                                <small>Affects risk assessment and rates</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-income">Annual Household Income</label>
+                                <input type="number" id="calc-income" min="0" step="1000" value="75000" required>
+                                <small>Helps determine liability coverage needs</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-drivers">Number of Drivers</label>
+                                <input type="number" id="calc-drivers" min="1" max="10" value="2" required>
+                                <small>All licensed drivers in household</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-vehicles">Number of Vehicles</label>
+                                <input type="number" id="calc-vehicles" min="1" max="10" value="2" required>
+                                <small>All vehicles to be insured</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assets -->
+                    <div class="form-section">
+                        <h3><span>🏠</span> Assets & Property</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="calc-home-value">Home Value (if you own)</label>
+                                <input type="number" id="calc-home-value" min="0" step="10000" value="250000">
+                                <small>Enter 0 if you rent</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-savings">Total Savings & Investments</label>
+                                <input type="number" id="calc-savings" min="0" step="1000" value="50000">
+                                <small>Include 401k, stocks, savings accounts</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-vehicle-value">Total Value of All Vehicles</label>
+                                <input type="number" id="calc-vehicle-value" min="0" step="1000" value="35000">
+                                <small>Combined value of all your vehicles</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-other-assets">Other Significant Assets</label>
+                                <input type="number" id="calc-other-assets" min="0" step="1000" value="0">
+                                <small>Boats, RVs, valuable collections, etc.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Factors -->
+                    <div class="form-section">
+                        <h3><span>⚠️</span> Risk Factors</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Check all that apply:</label>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-teen-driver">
+                                    <label for="calc-teen-driver">Teen driver(s) in household</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-long-commute">
+                                    <label for="calc-long-commute">Long commute (25+ miles each way)</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-business-use">
+                                    <label for="calc-business-use">Use vehicle for business</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-towing">
+                                    <label for="calc-towing">Tow trailers or boats</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-rideshare">
+                                    <label for="calc-rideshare">Drive for Uber/Lyft</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Vehicle financing:</label>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-financed">
+                                    <label for="calc-financed">Have car loan or lease</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-new-car">
+                                    <label for="calc-new-car">Own vehicle less than 3 years old</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-luxury">
+                                    <label for="calc-luxury">Own luxury or sports vehicle</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="calculate-btn" onclick="calculateCoverage()">
+                        Calculate My Coverage Needs
+                    </button>
+                </form>
+
+                <!-- Results Section -->
+                <div id="calculator-results">
+                    <div class="results-header">
+                        <h3>Your Recommended Coverage</h3>
+                        <p>Based on your financial profile and risk factors</p>
+                    </div>
+                    
+                    <div class="results-body">
+                        <div class="coverage-recommendation">
+                            <h4 style="color: var(--color-accent); margin-bottom: var(--space-lg);">✅ Recommended Coverage Levels</h4>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Bodily Injury (per person)</span>
+                                <span class="coverage-amount" id="rec-bi-person">$100,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Bodily Injury (per accident)</span>
+                                <span class="coverage-amount" id="rec-bi-accident">$300,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Property Damage</span>
+                                <span class="coverage-amount" id="rec-pd">$100,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Uninsured Motorist</span>
+                                <span class="coverage-amount" id="rec-um">100/300/50</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Medical Payments</span>
+                                <span class="coverage-amount" id="rec-med">$5,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-box" style="margin-top: var(--space-lg);">
+                            <h4>💰 Asset Protection Analysis</h4>
+                            <p id="asset-explanation">Based on your assets, you need adequate liability coverage to protect your financial future.</p>
+                        </div>
+                        
+                        <div class="feature-box" style="margin-top: var(--space-lg);">
+                            <h4>🚗 Vehicle Coverage Recommendation</h4>
+                            <p id="vehicle-explanation">Consider comprehensive and collision coverage for your vehicles.</p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: var(--space-2xl);">
+                            <p><strong>Ready to get these coverage levels at the best price?</strong></p>
+                            <div class="hero-buttons" style="margin-top: var(--space-lg);">
+                                <a href="tel:3368351993" class="btn btn--primary">📞 Call (336) 835-1993</a>
+                                <a href="mailto:Save@BillLayneInsurance.com?subject=Coverage Calculator Results" class="btn btn--secondary">✉️ Email My Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
