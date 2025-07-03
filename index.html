@@ -926,6 +926,151 @@
             font-size: 1.125rem;
         }
 
+        /* Analyzer Section Styles */
+        .analyzer-section {
+            background: var(--color-surface);
+            padding: var(--space-3xl) 0;
+        }
+
+        .analyzer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .analyzer-card {
+            background: var(--color-background);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analyzer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .analyzer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .analyzer-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .analyzer-card__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .analyzer-card__icon {
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
+        }
+
+        .analyzer-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .analyzer-card__description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+
+        .analyzer-card__features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--space-xl);
+        }
+
+        .analyzer-card__features li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+            color: var(--color-text-secondary);
+        }
+
+        .analyzer-card__features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .analyzer-cta {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .analyzer-cta p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+        }
+
+        .icon-arrow {
+            margin-left: var(--space-xs);
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .icon-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Analysis Results Styles */
+        .gap-item, .savings-item {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gap-item h5, .savings-item h5 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-xs);
+            font-family: var(--font-serif);
+        }
+
+        .gap-item p, .savings-item p {
+            margin: var(--space-xs) 0;
+            color: var(--color-text-secondary);
+        }
+
+        .gap-item p strong, .savings-item p strong {
+            color: var(--color-text);
+        }
+
         /* Mobile responsive */
         @media (max-width: 768px) {
             .navbar-content {
@@ -997,6 +1142,22 @@
                 right: 10px;
                 width: 35px;
                 height: 35px;
+            }
+            
+            .analyzer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .analyzer-card__header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .analyzer-card__icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
             }
         }
 
@@ -1288,6 +1449,84 @@
                     <li>You have 30 days to notify DMV of any insurance changes</li>
                     <li>NC uses a "fault" system - at-fault driver pays for damages</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Coverage Analyzer -->
+    <section id="coverage-analyzer" class="analyzer-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Coverage Analyzer</h2>
+                <p>Discover if you have the right protection with our free tools</p>
+            </div>
+            <div class="analyzer-grid">
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">🚗</span>
+                        <h3>Auto Coverage Checkup</h3>
+                    </div>
+                    <p class="analyzer-card__description">Is your auto insurance keeping up with your needs? Find coverage gaps and savings opportunities.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Liability limits analysis</li>
+                        <li>Deductible optimization</li>
+                        <li>Coverage gap identifier</li>
+                        <li>Discount eligibility check</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="openAutoAnalyzer()">
+                        Start Auto Analysis
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">🏠</span>
+                        <h3>Home Insurance Evaluator</h3>
+                    </div>
+                    <p class="analyzer-card__description">Ensure your biggest investment has proper protection with our comprehensive evaluation tool.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Replacement cost calculator</li>
+                        <li>Personal property assessment</li>
+                        <li>Liability protection review</li>
+                        <li>Natural disaster readiness</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="startAnalyzer('home')">
+                        Evaluate Home Coverage
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">☂️</span>
+                        <h3>Umbrella Policy Calculator</h3>
+                    </div>
+                    <p class="analyzer-card__description">Find out if you need extra liability protection with our risk assessment calculator.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Asset protection analysis</li>
+                        <li>Risk exposure assessment</li>
+                        <li>Coverage amount calculator</li>
+                        <li>Cost-benefit analysis</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="startAnalyzer('umbrella')">
+                        Calculate My Risk
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="analyzer-cta">
+                <p>Need personalized advice? Our experts are ready to help.</p>
+                <a href="tel:3368351993" class="btn btn--secondary">Call (336) 835-1993</a>
             </div>
         </div>
     </section>
@@ -1697,6 +1936,175 @@
             document.getElementById('calculator-results').style.display = 'block';
             document.getElementById('calculator-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+        
+        // Auto Analyzer Functions
+        function openAutoAnalyzer() {
+            document.getElementById('autoAnalyzerModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeAutoAnalyzer() {
+            document.getElementById('autoAnalyzerModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            // Reset form
+            document.getElementById('autoAnalyzerForm').reset();
+            document.getElementById('auto-analyzer-results').style.display = 'none';
+        }
+        
+        function analyzeAutoCoverage() {
+            // Get current coverage values
+            const currentBI = document.getElementById('current-bi').value;
+            const currentPD = parseInt(document.getElementById('current-pd').value) || 0;
+            const currentUM = document.getElementById('current-um').checked;
+            const currentMed = parseInt(document.getElementById('current-med').value) || 0;
+            const currentComp = document.getElementById('current-comp').checked;
+            const currentColl = document.getElementById('current-coll').checked;
+            const deductible = parseInt(document.getElementById('current-deductible').value) || 0;
+            
+            // Get personal info
+            const homeOwner = document.getElementById('home-owner').checked;
+            const hasAssets = document.getElementById('has-assets').checked;
+            const numVehicles = parseInt(document.getElementById('num-vehicles').value) || 1;
+            const vehicleAge = parseInt(document.getElementById('vehicle-age').value) || 5;
+            const vehicleValue = parseInt(document.getElementById('vehicle-value-analyzer').value) || 10000;
+            
+            // Get discount eligibility
+            const multiPolicy = document.getElementById('multi-policy').checked;
+            const goodDriver = document.getElementById('good-driver').checked;
+            const defensiveDriving = document.getElementById('defensive-driving').checked;
+            const goodStudent = document.getElementById('good-student').checked;
+            const lowMileage = document.getElementById('low-mileage').checked;
+            
+            // Analysis logic
+            let gaps = [];
+            let recommendations = [];
+            let savings = [];
+            
+            // Analyze liability coverage
+            const biValues = currentBI.split('/');
+            const biPerson = parseInt(biValues[0]) * 1000;
+            const biAccident = parseInt(biValues[1]) * 1000;
+            
+            if (homeOwner || hasAssets) {
+                if (biPerson < 250000) {
+                    gaps.push({
+                        type: 'Liability Coverage',
+                        issue: 'Your liability limits may be too low to protect your assets',
+                        recommendation: 'Consider increasing to at least 250/500/100'
+                    });
+                }
+            } else if (biPerson < 100000) {
+                gaps.push({
+                    type: 'Liability Coverage',
+                    issue: 'Your liability coverage is below recommended minimums',
+                    recommendation: 'Consider increasing to at least 100/300/100'
+                });
+            }
+            
+            // Analyze property damage
+            if (currentPD < 100000) {
+                gaps.push({
+                    type: 'Property Damage',
+                    issue: `$${currentPD.toLocaleString()} may not cover damage to newer vehicles`,
+                    recommendation: 'Consider increasing to $100,000 or more'
+                });
+            }
+            
+            // Analyze uninsured motorist
+            if (!currentUM) {
+                gaps.push({
+                    type: 'Uninsured Motorist',
+                    issue: '1 in 8 NC drivers are uninsured',
+                    recommendation: 'Add uninsured motorist coverage matching your liability limits'
+                });
+            }
+            
+            // Analyze medical payments
+            if (currentMed < 5000) {
+                gaps.push({
+                    type: 'Medical Payments',
+                    issue: 'Limited or no medical payment coverage',
+                    recommendation: 'Consider $5,000-$10,000 in medical payments coverage'
+                });
+            }
+            
+            // Analyze comprehensive/collision
+            if (vehicleValue > 5000 && (!currentComp || !currentColl)) {
+                gaps.push({
+                    type: 'Vehicle Coverage',
+                    issue: `No comprehensive/collision on vehicle worth $${vehicleValue.toLocaleString()}`,
+                    recommendation: 'Add comprehensive and collision coverage'
+                });
+            } else if (vehicleValue < 3000 && currentComp && currentColl) {
+                savings.push({
+                    type: 'Vehicle Coverage',
+                    opportunity: 'Consider dropping comprehensive/collision on older vehicle',
+                    potential: 'Save $500-$1,000 annually'
+                });
+            }
+            
+            // Analyze deductibles
+            if (deductible < 500 && currentComp) {
+                savings.push({
+                    type: 'Deductible',
+                    opportunity: 'Increase deductible from $' + deductible + ' to $500 or $1,000',
+                    potential: 'Save 15-30% on comprehensive/collision'
+                });
+            }
+            
+            // Check discounts
+            let missedDiscounts = [];
+            if (!multiPolicy) missedDiscounts.push('Multi-policy bundle (save 5-25%)');
+            if (!goodDriver) missedDiscounts.push('Good driver discount (save 10-40%)');
+            if (!defensiveDriving) missedDiscounts.push('Defensive driving course (save 5-10%)');
+            if (!goodStudent) missedDiscounts.push('Good student discount (save 5-25%)');
+            if (!lowMileage) missedDiscounts.push('Low mileage discount (save 5-30%)');
+            
+            if (missedDiscounts.length > 0) {
+                savings.push({
+                    type: 'Discounts',
+                    opportunity: 'Eligible for ' + missedDiscounts.length + ' additional discounts',
+                    potential: missedDiscounts.join(', ')
+                });
+            }
+            
+            // Calculate overall score
+            let score = 100;
+            score -= gaps.length * 15;
+            score = Math.max(score, 0);
+            
+            // Update results UI
+            document.getElementById('coverage-score').textContent = score;
+            document.getElementById('score-message').textContent = 
+                score >= 85 ? 'Excellent Coverage!' :
+                score >= 70 ? 'Good Coverage with Some Gaps' :
+                score >= 50 ? 'Moderate Coverage - Improvements Needed' :
+                'Significant Coverage Gaps Detected';
+            
+            // Display gaps
+            const gapsContainer = document.getElementById('coverage-gaps');
+            gapsContainer.innerHTML = gaps.map(gap => `
+                <div class="gap-item">
+                    <h5>${gap.type}</h5>
+                    <p><strong>Issue:</strong> ${gap.issue}</p>
+                    <p><strong>Recommendation:</strong> ${gap.recommendation}</p>
+                </div>
+            `).join('');
+            
+            // Display savings
+            const savingsContainer = document.getElementById('savings-opportunities');
+            savingsContainer.innerHTML = savings.map(saving => `
+                <div class="savings-item">
+                    <h5>${saving.type}</h5>
+                    <p><strong>Opportunity:</strong> ${saving.opportunity}</p>
+                    <p><strong>Potential Savings:</strong> ${saving.potential}</p>
+                </div>
+            `).join('');
+            
+            // Show results
+            document.getElementById('auto-analyzer-results').style.display = 'block';
+            document.getElementById('auto-analyzer-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
     </script>
 
     <!-- Calculator Modal -->
@@ -1877,6 +2285,191 @@
                             <div class="hero-buttons" style="margin-top: var(--space-lg);">
                                 <a href="tel:3368351993" class="btn btn--primary">📞 Call (336) 835-1993</a>
                                 <a href="mailto:Save@BillLayneInsurance.com?subject=Coverage Calculator Results" class="btn btn--secondary">✉️ Email My Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto Analyzer Modal -->
+    <div id="autoAnalyzerModal" class="calculator-modal">
+        <div class="calculator-container">
+            <button class="calculator-close" onclick="closeAutoAnalyzer()">×</button>
+            
+            <div class="calculator-header">
+                <h2>Auto Coverage Analyzer</h2>
+                <p>Analyze your current coverage and find gaps & savings opportunities</p>
+            </div>
+            
+            <div class="calculator-body">
+                <form id="autoAnalyzerForm">
+                    <!-- Current Coverage -->
+                    <div class="form-section">
+                        <h3><span>📋</span> Your Current Coverage</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="current-bi">Bodily Injury Liability</label>
+                                <select id="current-bi" required>
+                                    <option value="30/60">30/60 (Below NC Minimum)</option>
+                                    <option value="50/100" selected>50/100 (NC Minimum)</option>
+                                    <option value="100/300">100/300 (Recommended)</option>
+                                    <option value="250/500">250/500 (Enhanced)</option>
+                                    <option value="500/1000">500/1000 (Premium)</option>
+                                </select>
+                                <small>Per person/Per accident (in thousands)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-pd">Property Damage Liability</label>
+                                <input type="number" id="current-pd" min="0" step="5000" value="50000" required>
+                                <small>Current property damage limit</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Uninsured Motorist Coverage</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-um" checked>
+                                    <label for="current-um">I have uninsured motorist coverage</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-med">Medical Payments Coverage</label>
+                                <input type="number" id="current-med" min="0" step="1000" value="0" placeholder="0 if none">
+                                <small>Current medical payments limit</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Comprehensive & Collision</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-comp">
+                                    <label for="current-comp">Comprehensive coverage</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-coll">
+                                    <label for="current-coll">Collision coverage</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-deductible">Deductible Amount</label>
+                                <select id="current-deductible">
+                                    <option value="0">No comp/collision</option>
+                                    <option value="250">$250</option>
+                                    <option value="500" selected>$500</option>
+                                    <option value="1000">$1,000</option>
+                                    <option value="2500">$2,500</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><span>🏠</span> About You</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Property Ownership</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="home-owner">
+                                    <label for="home-owner">I own my home</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="has-assets">
+                                    <label for="has-assets">I have significant savings/investments</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="num-vehicles">Number of Vehicles</label>
+                                <input type="number" id="num-vehicles" min="1" max="10" value="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-age">Age of Newest Vehicle</label>
+                                <input type="number" id="vehicle-age" min="0" max="50" value="5" required>
+                                <small>Years old</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-value-analyzer">Approximate Vehicle Value</label>
+                                <input type="number" id="vehicle-value-analyzer" min="0" step="1000" value="15000" required>
+                                <small>Current market value</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discount Eligibility -->
+                    <div class="form-section">
+                        <h3><span>💰</span> Current Discounts</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Check all that apply:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="multi-policy">
+                                    <label for="multi-policy">Bundle with home/renters insurance</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="good-driver">
+                                    <label for="good-driver">No accidents/tickets in 3 years</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="defensive-driving">
+                                    <label for="defensive-driving">Completed defensive driving course</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="good-student">
+                                    <label for="good-student">Good student (3.0+ GPA)</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="low-mileage">
+                                    <label for="low-mileage">Drive less than 7,500 miles/year</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="calculate-btn" onclick="analyzeAutoCoverage()">
+                        Analyze My Coverage
+                    </button>
+                </form>
+
+                <!-- Analysis Results -->
+                <div id="auto-analyzer-results" style="display: none;">
+                    <div class="results-header">
+                        <h3>Coverage Analysis Results</h3>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 4rem; font-weight: 700; color: white;" id="coverage-score">85</div>
+                                <div style="font-size: 1.2rem;" id="score-message">Good Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-body">
+                        <!-- Coverage Gaps -->
+                        <div class="feature-box" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(252, 165, 165, 0.1) 100%); border-left-color: var(--color-error);">
+                            <h4>🚨 Coverage Gaps Identified</h4>
+                            <div id="coverage-gaps">
+                                <!-- Gaps will be inserted here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Savings Opportunities -->
+                        <div class="feature-box" style="margin-top: var(--space-lg); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%); border-left-color: var(--color-success);">
+                            <h4>💰 Savings Opportunities</h4>
+                            <div id="savings-opportunities">
+                                <!-- Savings will be inserted here -->
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: var(--space-2xl);">
+                            <p><strong>Ready to optimize your coverage and save money?</strong></p>
+                            <div class="hero-buttons" style="margin-top: var(--space-lg);">
+                                <a href="tel:3368351993" class="btn btn--primary">📞 Call (336) 835-1993</a>
+                                <a href="mailto:Save@BillLayneInsurance.com?subject=Auto Coverage Analysis" class="btn btn--secondary">✉️ Email My Analysis</a>
                             </div>
                         </div>
                     </div>
