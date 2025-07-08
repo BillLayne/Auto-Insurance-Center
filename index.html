@@ -192,17 +192,22 @@
         .navbar-cta {
             display: flex;
             align-items: center;
-            gap: var(--space-lg);
+            gap: var(--space-md);
+            flex-shrink: 0;
         }
 
         .phone-link {
             font-family: var(--font-serif);
             font-weight: 700;
-            font-size: var(--font-size-lg);
+            font-size: 1.1rem;
             color: var(--color-primary);
             text-decoration: none;
             transition: var(--transition-base);
             position: relative;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
         }
 
         .phone-link::after {
