@@ -1208,8 +1208,8 @@
             /* Mobile menu dropdown */
             .navbar-menu {
                 display: block;
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 80px;
                 left: 0;
                 right: 0;
                 background: rgba(255, 255, 255, 1);
@@ -1231,6 +1231,7 @@
             .navbar-menu.active {
                 max-height: 500px;
                 opacity: 1;
+                border: 2px solid var(--color-primary);
             }
 
             .nav-link {
