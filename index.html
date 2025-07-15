@@ -1229,23 +1229,30 @@
 
             /* When menu is open */
             .navbar-menu.active {
-                max-height: 400px;
+                max-height: 500px;
                 opacity: 1;
             }
 
             .nav-link {
-                display: block;
-                padding: var(--space-sm) 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: var(--space-md) 0;
                 text-align: center;
                 font-size: 1.1rem;
                 color: var(--color-primary);
                 text-decoration: none;
                 transition: var(--transition-base);
+                line-height: 1.3;
             }
 
             .nav-link:hover {
                 transform: translateX(5px);
                 opacity: 0.8;
+            }
+            
+            .nav-link::after {
+                display: none;
             }
 
             .hero {
