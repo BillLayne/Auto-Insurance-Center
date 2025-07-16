@@ -1146,7 +1146,7 @@
 
         /* Hide navbar menu on medium screens */
         @media (max-width: 1024px) {
-            .navbar-menu {
+            .navbar-menu:not(.active) {
                 display: none !important;
             }
             
@@ -2302,8 +2302,13 @@
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navbarMenu = document.querySelector('.navbar-menu');
             
+            console.log('Mobile menu toggle:', mobileMenuToggle);
+            console.log('Navbar menu:', navbarMenu);
+            
             if (mobileMenuToggle && navbarMenu) {
-                mobileMenuToggle.addEventListener('click', function() {
+                mobileMenuToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    console.log('Menu button clicked');
                     navbarMenu.classList.toggle('active');
                     this.classList.toggle('active');
                 });
