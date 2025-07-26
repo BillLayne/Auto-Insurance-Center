@@ -350,35 +350,33 @@
             document.getElementById('auto-analyzer-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
-        // Mobile menu toggle functionality
+        // Mobile menu toggle functionality - Updated for unified header
         document.addEventListener('DOMContentLoaded', function() {
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-            const navbarMenu = document.querySelector('.navbar-menu');
-            
-            console.log('Mobile menu toggle:', mobileMenuToggle);
-            console.log('Navbar menu:', navbarMenu);
-            
-            if (mobileMenuToggle && navbarMenu) {
+            const headerNav = document.querySelector('.header-nav');
+
+            if (mobileMenuToggle && headerNav) {
+                // Simple toggle functionality
                 mobileMenuToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
                     e.stopPropagation();
-                    console.log('Menu button clicked');
-                    navbarMenu.classList.toggle('active');
-                    this.classList.toggle('active');
+                    headerNav.classList.toggle('active');
+                    mobileMenuToggle.classList.toggle('active');
                 });
 
                 // Close menu when clicking outside
                 document.addEventListener('click', function(event) {
-                    if (!event.target.closest('.navbar-content')) {
-                        navbarMenu.classList.remove('active');
+                    if (!event.target.closest('.header-container')) {
+                        headerNav.classList.remove('active');
                         mobileMenuToggle.classList.remove('active');
                     }
                 });
 
-                // Close menu when clicking on a link
-                const navLinks = document.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
+                // Close menu when clicking on a nav link
+                const menuLinks = document.querySelectorAll('.header-nav .nav-link');
+                menuLinks.forEach(link => {
                     link.addEventListener('click', function() {
-                        navbarMenu.classList.remove('active');
+                        headerNav.classList.remove('active');
                         mobileMenuToggle.classList.remove('active');
                     });
                 });
