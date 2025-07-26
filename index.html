@@ -7,11 +7,30 @@
     <meta name="description" content="Your complete auto insurance resource center in North Carolina. Get quotes, compare coverage, find discounts, and access all major insurance companies.">
     
     <!-- Using the modern ethereal blog style from your claims page -->
-    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Additional inline styles if needed */
         /* Import Google Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap');
+        
+        /* Ensure header displays correctly */
+        @media (min-width: 769px) {
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+            
+            .header-nav {
+                display: flex !important;
+                position: static !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 40px !important;
+                background: transparent !important;
+            }
+        }
 
         :root {
             /* Brand Colors - Enhanced palette */
