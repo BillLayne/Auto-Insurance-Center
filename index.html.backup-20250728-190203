@@ -1,0 +1,2898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Auto Insurance Center - Bill Layne Insurance Agency</title>
+    <meta name="description" content="Your complete auto insurance resource center in North Carolina. Get quotes, compare coverage, find discounts, and access all major insurance companies.">
+    
+    <!-- Using the modern ethereal blog style from your claims page -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional inline styles if needed */
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;500;600&display=swap');
+        
+        /* Ensure header displays correctly */
+        @media (min-width: 769px) {
+            .mobile-menu-toggle {
+                display: none !important;
+            }
+            
+            .header-nav {
+                display: flex !important;
+                position: static !important;
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 40px !important;
+                background: transparent !important;
+            }
+        }
+
+        :root {
+            /* Brand Colors - Enhanced palette */
+            --color-primary: #1e3a8a;
+            --color-primary-light: #3b82f6;
+            --color-primary-glow: #60a5fa;
+            --color-accent: #10b981;
+            --color-accent-light: #34d399;
+            --color-gradient-1: #667eea;
+            --color-gradient-2: #764ba2;
+            --color-gradient-3: #f093fb;
+            --color-gradient-4: #4facfe;
+            
+            /* Neutrals */
+            --color-background: #ffffff;
+            --color-surface: #f8fafc;
+            --color-surface-glass: rgba(248, 250, 252, 0.8);
+            --color-text: #1e293b;
+            --color-text-secondary: #64748b;
+            --color-text-light: #94a3b8;
+            
+            /* UI Colors */
+            --color-border: #e2e8f0;
+            --color-border-light: #f1f5f9;
+            --color-error: #ef4444;
+            --color-success: #10b981;
+            --color-warning: #f59e0b;
+            
+            /* Typography */
+            --font-serif: 'Montserrat', -apple-system, sans-serif;
+            --font-sans: 'Open Sans', -apple-system, sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 0.75rem;
+            --space-md: 1rem;
+            --space-lg: 1.5rem;
+            --space-xl: 2rem;
+            --space-2xl: 3rem;
+            --space-3xl: 4rem;
+            
+            /* Typography Scale */
+            --font-size-xs: clamp(0.75rem, 2vw, 0.875rem);
+            --font-size-sm: clamp(0.875rem, 2.5vw, 1rem);
+            --font-size-base: clamp(1rem, 3vw, 1.125rem);
+            --font-size-lg: clamp(1.25rem, 4vw, 1.5rem);
+            --font-size-xl: clamp(1.5rem, 5vw, 2rem);
+            --font-size-2xl: clamp(2rem, 6vw, 3rem);
+            --font-size-3xl: clamp(2.5rem, 7vw, 4rem);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.15);
+            --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.5);
+            --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Animations */
+            --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--color-background);
+            color: var(--color-text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.05) 0%, transparent 50%);
+            z-index: -1;
+            animation: floatingGradient 20s ease-in-out infinite;
+        }
+
+        @keyframes floatingGradient {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(20px) rotate(-1deg); }
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-lg);
+        }
+
+        /* Header Styles */
+        .navbar {
+            background: var(--color-surface-glass);
+            border-bottom: 1px solid var(--color-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-color: rgba(255, 255, 255, 0.75);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: var(--transition-base);
+        }
+
+        .navbar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-primary-light), var(--color-accent-light), transparent);
+            opacity: 0.5;
+            animation: shimmerLine 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmerLine {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .navbar-content {
+            padding: var(--space-lg) 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--space-md);
+        }
+
+        .navbar-brand h2 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            color: var(--color-primary);
+            margin: 0;
+            letter-spacing: -0.025em;
+        }
+
+        .navbar-brand span {
+            font-size: var(--font-size-sm);
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .navbar-cta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            flex-shrink: 0;
+        }
+
+        .phone-link {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            text-decoration: none;
+            transition: var(--transition-base);
+            position: relative;
+            white-space: nowrap;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .phone-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transition: var(--transition-base);
+        }
+
+        .phone-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(226, 232, 240, 0.80) 100%), url('https://i.imgur.com/AgeT7LI.png') center/cover;
+            padding: 120px 0 80px;
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(30, 58, 138, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .gradient-text {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-2xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-sm) var(--space-lg);
+            border-radius: var(--radius-2xl);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+            border: none;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn--primary {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn--primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(30, 58, 138, 0.4);
+        }
+
+        .btn--primary:hover::before {
+            left: 100%;
+        }
+
+        .btn--secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn--secondary:hover {
+            background: var(--color-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn--lg {
+            padding: var(--space-md) var(--space-xl);
+            font-size: var(--font-size-lg);
+        }
+
+        /* Sections */
+        section {
+            padding: var(--space-3xl) 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--color-surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+
+        .section-header h2 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: var(--space-lg);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-primary-light), transparent);
+            opacity: 0.6;
+        }
+
+        .section-header p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Grid layouts */
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        /* Cards */
+        .card {
+            background: var(--color-background);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-card);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 40%, rgba(30, 58, 138, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: transparent;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card h3 {
+            font-family: var(--font-serif);
+            font-size: var(--font-size-lg);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+            color: var(--color-text);
+            position: relative;
+            z-index: 1;
+        }
+
+        .card p {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card ul {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card .btn {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Icon cards */
+        .icon-card {
+            text-align: center;
+        }
+
+        .icon-card .icon {
+            font-size: 48px;
+            margin-bottom: var(--space-md);
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .icon-card ul {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Feature boxes */
+        .feature-box {
+            background: linear-gradient(135deg, var(--color-surface) 0%, rgba(30, 58, 138, 0.05) 100%);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--color-primary);
+            margin-bottom: var(--space-lg);
+        }
+
+        .feature-box h4 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-lg);
+            margin-top: var(--space-2xl);
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: var(--space-lg);
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .stat-label {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+        }
+
+        /* Coverage table */
+        .coverage-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: var(--space-lg);
+            background: var(--color-background);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+
+        .coverage-table th,
+        .coverage-table td {
+            padding: var(--space-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .coverage-table th {
+            background: var(--color-surface);
+            font-weight: 600;
+            color: var(--color-text);
+        }
+
+        .coverage-table tr:hover {
+            background: var(--color-surface);
+        }
+
+        /* FAQ section */
+        .faq-item {
+            background: var(--color-background);
+            border: 1px solid var(--color-border-light);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            transition: var(--transition-base);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: var(--space-lg);
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-text);
+            transition: var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background: var(--color-surface);
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            display: none;
+        }
+
+        .faq-question[aria-expanded="true"] + .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            padding: var(--space-3xl) 0 var(--space-2xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-2xl);
+            margin-bottom: var(--space-2xl);
+        }
+
+        .footer h3 {
+            font-family: var(--font-serif);
+            margin-bottom: var(--space-md);
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.9;
+            transition: var(--transition-base);
+        }
+
+        .footer a:hover {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            opacity: 0.8;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            bottom: var(--space-xl);
+            right: var(--space-xl);
+            background: var(--color-background);
+            color: var(--color-text);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: var(--transition-base);
+            z-index: 9999;
+        }
+
+        .notification.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Section images */
+        .section-image {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .section-image img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-lg);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .section-image img.icon-set {
+            max-width: 600px;
+        }
+
+        /* Calculator Modal Styles */
+        .calculator-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .calculator-modal.show {
+            display: block;
+        }
+
+        .calculator-container {
+            background: var(--color-background);
+            max-width: 900px;
+            margin: 40px auto;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            animation: slideInUp 0.4s ease;
+        }
+
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .calculator-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--color-text);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition-base);
+            z-index: 10;
+        }
+
+        .calculator-close:hover {
+            transform: scale(1.1);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Calculator Form Styles */
+        .calculator-header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            padding: var(--space-2xl);
+            text-align: center;
+            border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+        }
+
+        .calculator-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .calculator-body {
+            padding: var(--space-2xl);
+        }
+
+        .form-section {
+            margin-bottom: var(--space-2xl);
+            padding-bottom: var(--space-2xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .form-section:last-child {
+            border-bottom: none;
+        }
+
+        .form-section h3 {
+            font-family: var(--font-serif);
+            color: var(--color-primary);
+            margin-bottom: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            margin-bottom: var(--space-xs);
+            color: var(--color-text);
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: var(--space-sm) var(--space-md);
+            border: 2px solid var(--color-border);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            transition: var(--transition-base);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-primary-light);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .form-group small {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            margin-top: var(--space-xs);
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-sm);
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .checkbox-group label {
+            cursor: pointer;
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            color: white;
+            border: none;
+            padding: var(--space-md) var(--space-2xl);
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: var(--radius-2xl);
+            cursor: pointer;
+            transition: var(--transition-base);
+            box-shadow: var(--shadow-md);
+            width: 100%;
+            max-width: 400px;
+            margin: var(--space-2xl) auto 0;
+            display: block;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Results Section */
+        #calculator-results {
+            display: none;
+            margin-top: var(--space-2xl);
+            animation: fadeIn 0.5s ease;
+        }
+
+        .results-header {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
+            color: white;
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            text-align: center;
+        }
+
+        .results-body {
+            background: var(--color-surface);
+            padding: var(--space-2xl);
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+
+        .coverage-recommendation {
+            background: white;
+            border: 2px solid var(--color-accent);
+            border-radius: var(--radius-lg);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .coverage-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-sm) 0;
+            border-bottom: 1px solid var(--color-border-light);
+        }
+
+        .coverage-item:last-child {
+            border-bottom: none;
+        }
+
+        .coverage-label {
+            font-weight: 500;
+        }
+
+        .coverage-amount {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.125rem;
+        }
+
+        /* Analyzer Section Styles */
+        .analyzer-section {
+            background: var(--color-surface);
+            padding: var(--space-3xl) 0;
+        }
+
+        .analyzer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--space-xl);
+            margin-top: var(--space-2xl);
+        }
+
+        .analyzer-card {
+            background: var(--color-background);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition-base);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analyzer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .analyzer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .analyzer-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .analyzer-card__header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .analyzer-card__icon {
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
+        }
+
+        .analyzer-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .analyzer-card__description {
+            color: var(--color-text-secondary);
+            margin-bottom: var(--space-lg);
+            line-height: 1.6;
+        }
+
+        .analyzer-card__features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--space-xl);
+        }
+
+        .analyzer-card__features li {
+            padding: var(--space-sm) 0;
+            padding-left: var(--space-lg);
+            position: relative;
+            color: var(--color-text-secondary);
+        }
+
+        .analyzer-card__features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .analyzer-cta {
+            text-align: center;
+            margin-top: var(--space-2xl);
+            padding: var(--space-xl);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05) 0%, rgba(59, 130, 246, 0.05) 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .analyzer-cta p {
+            font-size: var(--font-size-lg);
+            color: var(--color-text);
+            margin-bottom: var(--space-md);
+        }
+
+        .icon-arrow {
+            margin-left: var(--space-xs);
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover .icon-arrow {
+            transform: translateX(4px);
+        }
+
+        /* Analysis Results Styles */
+        .gap-item, .savings-item {
+            background: white;
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin-bottom: var(--space-md);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gap-item h5, .savings-item h5 {
+            color: var(--color-primary);
+            margin-bottom: var(--space-xs);
+            font-family: var(--font-serif);
+        }
+
+        .gap-item p, .savings-item p {
+            margin: var(--space-xs) 0;
+            color: var(--color-text-secondary);
+        }
+
+        .gap-item p strong, .savings-item p strong {
+            color: var(--color-text);
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--color-primary);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hamburger menu animation */
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .navbar-menu {
+            display: flex;
+            gap: var(--space-sm);
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--color-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-base);
+            position: relative;
+            white-space: nowrap;
+            line-height: 1.2;
+            text-align: center;
+            display: inline-flex;
+            flex-direction: column;
+            padding: 0.25rem 0.5rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--color-primary);
+            transition: var(--transition-base);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hide navbar menu on medium screens */
+        @media (max-width: 1024px) {
+            .navbar-menu:not(.active) {
+                display: none !important;
+            }
+            
+            .mobile-menu-toggle {
+                display: block !important;
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .navbar-content {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0.75rem 0;
+                position: relative;
+            }
+
+            /* Keep brand on left */
+            .navbar-brand {
+                order: 1;
+                flex: 0 0 auto;
+            }
+
+            .navbar-brand h2 {
+                font-size: 1.25rem;
+            }
+
+            .navbar-brand span {
+                display: none;
+            }
+
+            /* Phone number in center */
+            .navbar-cta {
+                order: 2;
+                flex-direction: row;
+                gap: var(--space-sm);
+                align-items: center;
+                flex: 0 0 auto;
+            }
+
+            .navbar-cta .phone-link {
+                font-size: 0.875rem;
+            }
+
+            /* Hide button on mobile */
+            .navbar-cta .btn--primary {
+                display: none;
+            }
+
+            /* Mobile menu toggle on right */
+            .mobile-menu-toggle {
+                display: block !important;
+                order: 3;
+                flex: 0 0 auto;
+            }
+
+            /* Mobile menu dropdown */
+            .navbar-menu {
+                display: block;
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 1);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: var(--space-md);
+                z-index: 9999;
+                flex-direction: column;
+                gap: var(--space-md);
+                width: 100%;
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+
+            /* When menu is open */
+            .navbar-menu.active {
+                max-height: 500px;
+                opacity: 1;
+                border: 2px solid var(--color-primary);
+                z-index: 10001;
+            }
+
+            .nav-link {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: var(--space-md) 0;
+                text-align: center;
+                font-size: 1.1rem;
+                color: var(--color-primary);
+                text-decoration: none;
+                transition: var(--transition-base);
+                line-height: 1.3;
+            }
+
+            .nav-link:hover {
+                transform: translateX(5px);
+                opacity: 0.8;
+            }
+            
+            .nav-link::after {
+                display: none;
+            }
+
+            .hero {
+                padding: 100px 0 60px;
+                background-attachment: scroll;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .gradient-text {
+                font-size: 2rem;
+            }
+
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                padding: 0 var(--space-md);
+            }
+            
+            #get-quote > div > div:last-child {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            #get-quote img {
+                margin-top: 2rem;
+            }
+            
+            #nc-requirements {
+                background-attachment: scroll !important;
+            }
+            
+            .calculator-container {
+                margin: 20px;
+                max-width: calc(100% - 40px);
+            }
+            
+            .calculator-header h2 {
+                font-size: 1.5rem;
+            }
+            
+            .calculator-body {
+                padding: var(--space-lg);
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calculator-close {
+                top: 10px;
+                right: 10px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .analyzer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+            
+            .analyzer-card__header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .analyzer-card__icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        [data-delay="1"] { animation-delay: 0.1s; }
+        [data-delay="2"] { animation-delay: 0.2s; }
+        [data-delay="3"] { animation-delay: 0.3s; }
+        [data-delay="4"] { animation-delay: 0.4s; }
+    </style>
+</head>
+<body>
+    <!-- Unified Header -->
+    <header class="unified-header">
+        <div class="header-container">
+            <div class="header-logo">
+                <a href="https://billlayneinsurance.com/" class="logo-link">
+                    Bill Layne Insurance
+                </a>
+            </div>
+            
+            <nav class="header-nav">
+                <ul class="nav-menu">
+                    <li><a href="https://billlayne.github.io/Auto-Insurance-Center/" class="nav-link active">Auto</a></li>
+                    <li><a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="nav-link">Home</a></li>
+                    <li><a href="https://billlayneinsurance.com/areas-we-serve.html" class="nav-link">Services</a></li>
+                    <li><a href="https://billlayne.github.io/NC-Insurance-Claims-Center.github.io/" class="nav-link">Claims</a></li>
+                    <li><a href="https://billlayne.github.io/Resources/" class="nav-link">Resources</a></li>
+                    <li><a href="https://billlayneinsurance.com/blog" class="nav-link">Blog</a></li>
+                    <li><a href="https://billlayneinsurance.com/contact-us.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header-cta">
+                <a href="tel:3368351993" class="phone-button">
+                    <span class="phone-icon">📞</span> (336) 835-1993
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="gradient-text">North Carolina Auto Insurance Center</h1>
+                <p class="hero-subtitle">Compare rates, find discounts, and get the coverage you need. Your complete resource for auto insurance in North Carolina.</p>
+                <div class="hero-buttons">
+                    <a href="#get-quote" class="btn btn--primary btn--lg">🚗 Get Instant Quote</a>
+                    <a href="#compare" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);">📊 Compare Coverage</a>
+                    <a href="#discounts" class="btn btn--primary btn--lg" style="background: linear-gradient(135deg, var(--color-warning) 0%, #fbbf24 100%);">💰 Find Discounts</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card fade-in-up" data-delay="1">
+                    <div class="stat-number">$1,427</div>
+                    <div class="stat-label">Average NC Annual Premium</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="2">
+                    <div class="stat-number">50/100/50</div>
+                    <div class="stat-label">NC Minimum Coverage</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="3">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Insurance Companies</div>
+                </div>
+                <div class="stat-card fade-in-up" data-delay="4">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Claims Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Types Section -->
+    <section id="coverage">
+        <div class="container">
+            <div class="section-header">
+                <h2>🛡️ Understanding Auto Insurance Coverage</h2>
+                <p>Know what you're buying and what protection you need in North Carolina</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/9Y9gMu9.png" alt="Auto Insurance Coverage Types">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card icon-card">
+                    <span class="icon">🚗</span>
+                    <h3>Liability Coverage</h3>
+                    <p><strong>Required in NC</strong><br>
+                    Covers damage and injuries you cause to others. NC minimum: 50/100/50</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>$50,000 bodily injury per person</li>
+                        <li>$100,000 bodily injury per accident</li>
+                        <li>$50,000 property damage</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">💥</span>
+                    <h3>Collision Coverage</h3>
+                    <p><strong>Optional but Recommended</strong><br>
+                    Pays for damage to your car from accidents, regardless of fault.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Choose your deductible ($250-$1,000)</li>
+                        <li>Required if you have a loan</li>
+                        <li>Covers hit-and-run damage</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🌪️</span>
+                    <h3>Comprehensive Coverage</h3>
+                    <p><strong>Protection Beyond Accidents</strong><br>
+                    Covers theft, vandalism, weather damage, and animal collisions.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Glass repair often no deductible</li>
+                        <li>Covers natural disasters</li>
+                        <li>Rental car theft protection</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🏥</span>
+                    <h3>Medical Payments</h3>
+                    <p><strong>Covers You & Passengers</strong><br>
+                    Pays medical expenses regardless of fault, supplements health insurance.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Typical limits: $1,000-$10,000</li>
+                        <li>No deductible required</li>
+                        <li>Covers funeral expenses</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🚫</span>
+                    <h3>Uninsured Motorist</h3>
+                    <p><strong>Required in NC</strong><br>
+                    Protects you when hit by uninsured or hit-and-run drivers.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>Must match liability limits</li>
+                        <li>Covers lost wages</li>
+                        <li>Stacks with health insurance</li>
+                    </ul>
+                </div>
+                
+                <div class="card icon-card">
+                    <span class="icon">🚙</span>
+                    <h3>Rental & Towing Reimbursement</h3>
+                    <p><strong>Convenience Coverage</strong><br>
+                    Rental car coverage and towing expense reimbursement.</p>
+                    <ul style="text-align: left; margin-top: 1rem;">
+                        <li>$30-50/day rental coverage</li>
+                        <li>Towing reimbursement up to $100+</li>
+                        <li>Pay upfront, then file for reimbursement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discounts Section -->
+    <section id="discounts">
+        <div class="container">
+            <div class="section-header">
+                <h2>💰 Save Money on Auto Insurance</h2>
+                <p>Common discounts that can reduce your premium by 5-40%</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/9vfvAK7.png" alt="Auto Insurance Discounts">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>🎓 Driver Discounts</h3>
+                    <ul>
+                        <li><strong>Good Student:</strong> 5-25% off (3.0+ GPA)</li>
+                        <li><strong>Defensive Driving:</strong> 5-10% off</li>
+                        <li><strong>Good Driver:</strong> 10-40% off (no accidents)</li>
+                        <li><strong>Low Mileage:</strong> 5-30% off (<7,500 miles/year)</li>
+                        <li><strong>Senior Citizen:</strong> 5-10% off (55+)</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>🚗 Vehicle Discounts</h3>
+                    <ul>
+                        <li><strong>Anti-Theft Device:</strong> 5-15% off</li>
+                        <li><strong>Safety Features:</strong> 5-30% off</li>
+                        <li><strong>New Car:</strong> 10-15% off</li>
+                        <li><strong>Electric/Hybrid:</strong> 5-10% off</li>
+                        <li><strong>Daytime Running Lights:</strong> 3-5% off</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3>📋 Policy Discounts</h3>
+                    <ul>
+                        <li><strong>Multi-Policy Bundle:</strong> 5-25% off</li>
+                        <li><strong>Multi-Car:</strong> 10-25% off</li>
+                        <li><strong>Pay in Full:</strong> 5-10% off</li>
+                        <li><strong>Paperless/Auto-Pay:</strong> 3-5% off</li>
+                        <li><strong>Early Signing:</strong> 5-10% off</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="feature-box" style="margin-top: 2rem;">
+                <h4>💡 Pro Tip: Stack Your Discounts</h4>
+                <p>Most insurers allow multiple discounts. A good student with a safe car who bundles policies can save 40% or more!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- NC Requirements Section -->
+    <section id="nc-requirements" style="background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('https://i.imgur.com/TUYCLRb.png') center/cover; background-attachment: fixed;">
+        <div class="container">
+            <div class="section-header">
+                <h2>📋 North Carolina Auto Insurance Requirements</h2>
+                <p>What the law requires and what experts recommend</p>
+            </div>
+            
+            <table class="coverage-table">
+                <thead>
+                    <tr>
+                        <th>Coverage Type</th>
+                        <th>NC Minimum</th>
+                        <th>Recommended</th>
+                        <th>Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Bodily Injury (per person)</strong></td>
+                        <td>$50,000</td>
+                        <td>$100,000+</td>
+                        <td>Medical bills can exceed $50k quickly</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bodily Injury (per accident)</strong></td>
+                        <td>$100,000</td>
+                        <td>$300,000+</td>
+                        <td>Multiple injuries drain coverage fast</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Property Damage</strong></td>
+                        <td>$50,000</td>
+                        <td>$100,000+</td>
+                        <td>New cars often cost $40k+</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uninsured Motorist BI</strong></td>
+                        <td>$50,000/$100,000</td>
+                        <td>Match liability</td>
+                        <td>1 in 8 NC drivers uninsured</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Uninsured Motorist PD</strong></td>
+                        <td>Not required</td>
+                        <td>$25,000+</td>
+                        <td>Covers hit-and-run damage</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Medical Payments</strong></td>
+                        <td>Not required</td>
+                        <td>$5,000+</td>
+                        <td>Covers deductibles & copays</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="feature-box" style="margin-top: 2rem;">
+                <h4>⚠️ Important NC Insurance Laws</h4>
+                <ul>
+                    <li>You must carry proof of insurance at all times while driving</li>
+                    <li>Driving without insurance: $50-$150 fine + license suspension</li>
+                    <li>You have 30 days to notify DMV of any insurance changes</li>
+                    <li>NC uses a "fault" system - at-fault driver pays for damages</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Coverage Analyzer -->
+    <section id="coverage-analyzer" class="analyzer-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Interactive Coverage Analyzer</h2>
+                <p>Discover if you have the right protection with our free tools</p>
+            </div>
+            <div class="analyzer-grid">
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">🚗</span>
+                        <h3>Auto Coverage Checkup</h3>
+                    </div>
+                    <p class="analyzer-card__description">Is your auto insurance keeping up with your needs? Find coverage gaps and savings opportunities.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Liability limits analysis</li>
+                        <li>Deductible optimization</li>
+                        <li>Coverage gap identifier</li>
+                        <li>Discount eligibility check</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="openAutoAnalyzer()">
+                        Start Auto Analysis
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">🏠</span>
+                        <h3>Home Insurance Evaluator</h3>
+                    </div>
+                    <p class="analyzer-card__description">Ensure your biggest investment has proper protection with our comprehensive evaluation tool.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Replacement cost calculator</li>
+                        <li>Personal property assessment</li>
+                        <li>Liability protection review</li>
+                        <li>Natural disaster readiness</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="startAnalyzer('home')">
+                        Evaluate Home Coverage
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="analyzer-card">
+                    <div class="analyzer-card__header">
+                        <span class="analyzer-card__icon">☂️</span>
+                        <h3>Umbrella Policy Calculator</h3>
+                    </div>
+                    <p class="analyzer-card__description">Find out if you need extra liability protection with our risk assessment calculator.</p>
+                    <ul class="analyzer-card__features">
+                        <li>Asset protection analysis</li>
+                        <li>Risk exposure assessment</li>
+                        <li>Coverage amount calculator</li>
+                        <li>Cost-benefit analysis</li>
+                    </ul>
+                    <button class="btn btn--primary" onclick="startAnalyzer('umbrella')">
+                        Calculate My Risk
+                        <svg class="icon-arrow" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="analyzer-cta">
+                <p>Need personalized advice? Our experts are ready to help.</p>
+                <a href="tel:3368351993" class="btn btn--secondary">Call (336) 835-1993</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources">
+        <div class="container">
+            <div class="section-header">
+                <h2>📚 Helpful Resources</h2>
+                <p>Tools and information to help you make informed decisions</p>
+            </div>
+            
+            <div class="section-image">
+                <img src="https://i.imgur.com/dQ78lGJ.png" alt="Insurance Resources Icons" class="icon-set">
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card">
+                    <h3>🏛️ NC Department of Insurance</h3>
+                    <p>Official state resource for insurance questions, complaints, and regulations.</p>
+                    <p><strong>Consumer Services:</strong><br>855-408-1212</p>
+                    <a href="https://www.ncdoi.gov" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Visit NCDOI</a>
+                </div>
+                
+                <div class="card">
+                    <h3>🚗 NC Rate Bureau</h3>
+                    <p>Sets baseline rates for auto insurance in North Carolina. Check proposed rate changes.</p>
+                    <p><strong>Rate Information:</strong><br>919-783-9790</p>
+                    <a href="https://www.ncrb.org/ncrb" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Check Rates</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📊 Coverage Calculator</h3>
+                    <p>Calculate how much coverage you need based on your assets and risk factors.</p>
+                    <p><strong>Free Tool:</strong><br>Personalized recommendations</p>
+                    <button onclick="openCalculatorModal()" class="btn btn--primary" style="margin-top: 1rem;">Calculate Coverage</button>
+                </div>
+                
+                <div class="card">
+                    <h3>🚔 DMV Services</h3>
+                    <p>Vehicle registration, license renewal, and driving records.</p>
+                    <p><strong>Customer Service:</strong><br>919-715-7000</p>
+                    <a href="https://www.ncdot.gov/dmv/offices-services/online/Pages/default.aspx" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Visit NC DMV</a>
+                </div>
+                
+                <div class="card">
+                    <h3>📱 Mobile Apps</h3>
+                    <p>Download insurer apps for digital ID cards, claims filing, and policy management.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Digital insurance cards legal in NC</li>
+                        <li>File claims with photos</li>
+                        <li>Track claim status</li>
+                    </ul>
+                    <a href="#" onclick="openMobileAppsModal(); return false;" class="btn btn--primary" style="margin-top: 1rem;">Get Mobile Apps</a>
+                </div>
+                
+                <div class="card">
+                    <h3>💳 Pay Insurance Lapse Fine</h3>
+                    <p>If you've had a lapse in auto insurance coverage, you must pay the required fine here.</p>
+                    <ul style="margin-top: 1rem;">
+                        <li>Required for coverage lapses</li>
+                        <li>Secure online payment</li>
+                        <li>Avoid license suspension</li>
+                    </ul>
+                    <a href="https://payments.ncdot.gov/auth" target="_blank" class="btn btn--primary" style="margin-top: 1rem;">Pay Lapse Fine</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>❓ Frequently Asked Questions</h2>
+                <p>Common questions about auto insurance in North Carolina</p>
+            </div>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>How can I lower my auto insurance rates?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>There are several ways to reduce your auto insurance premiums:</p>
+                        <ul>
+                            <li><strong>Shop around:</strong> Compare quotes from multiple insurers annually</li>
+                            <li><strong>Increase deductibles:</strong> Higher deductibles = lower premiums</li>
+                            <li><strong>Bundle policies:</strong> Combine auto with home/renters insurance</li>
+                            <li><strong>Maintain good credit:</strong> Better credit often means lower rates</li>
+                            <li><strong>Drive safely:</strong> Avoid tickets and accidents</li>
+                            <li><strong>Ask about discounts:</strong> Many go unclaimed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>What factors affect my insurance rates in NC?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>North Carolina insurers consider many factors when setting rates:</p>
+                        <ul>
+                            <li><strong>Driving record:</strong> Accidents and violations increase rates</li>
+                            <li><strong>Age and experience:</strong> Younger drivers pay more</li>
+                            <li><strong>Location:</strong> Urban areas typically cost more</li>
+                            <li><strong>Vehicle type:</strong> Sports cars and luxury vehicles cost more</li>
+                            <li><strong>Credit score:</strong> Better credit usually means lower rates</li>
+                            <li><strong>Annual mileage:</strong> More driving = higher risk</li>
+                            <li><strong>Coverage levels:</strong> More coverage costs more</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>Do I need uninsured motorist coverage if I have health insurance?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>Yes, you should keep uninsured motorist coverage even with health insurance:</strong></p>
+                        <ul>
+                            <li>Covers lost wages your health insurance won't pay</li>
+                            <li>No health insurance deductibles or copays</li>
+                            <li>Covers passengers who might not have health insurance</li>
+                            <li>Provides coverage for pain and suffering</li>
+                            <li>Required by NC law unless rejected in writing</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                        <span>How do NC insurance points affect my rates?</span>
+                        <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="faq-answer">
+                        <p>NC insurance points can significantly increase your rates:</p>
+                        <ul>
+                            <li><strong>1 point:</strong> 30% rate increase</li>
+                            <li><strong>2 points:</strong> 45% rate increase</li>
+                            <li><strong>3 points:</strong> 60% rate increase</li>
+                            <li><strong>4 points:</strong> 80% rate increase</li>
+                            <li><strong>12 points (DUI):</strong> 340% rate increase</li>
+                        </ul>
+                        <p><strong>Note:</strong> Insurance points are different from DMV license points!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Quote Section -->
+    <section id="get-quote" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">🚗 Ready to Save on Auto Insurance?</h2>
+                <p style="color: white; opacity: 0.95; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Let us help you find the best coverage at the lowest price</p>
+            </div>
+            
+            <div style="display: flex; align-items: center; gap: 3rem; max-width: 1000px; margin: 0 auto; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem; color: white; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">Get personalized quotes from multiple top-rated insurers in minutes. We'll help you compare coverage and find all available discounts.</p>
+                    
+                    <div class="hero-buttons">
+                        <a href="tel:3368351993" class="btn btn--secondary btn--lg">📞 Call (336) 835-1993</a>
+                        <a href="mailto:Save@BillLayneInsurance.com" class="btn btn--secondary btn--lg">✉️ Email for Quote</a>
+                    </div>
+                    
+                    <p style="margin-top: 2rem; color: white; opacity: 0.95;">Office Hours: Monday - Friday, 9:00 AM - 5:00 PM</p>
+                </div>
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="https://i.imgur.com/zsodZcd.png" alt="Get Your Auto Insurance Quote" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Customer Testimonials Section -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title text-center">What Our Auto Insurance Clients Say</h2>
+            <p class="section-subtitle text-center">Real experiences from North Carolina drivers we've helped save money and get better coverage</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"Bill helped me save $1,200 a year on my auto insurance! He found discounts I didn't even know existed. The whole process was quick and easy."</p>
+                    <div class="testimonial-author">
+                        <strong>Robert K.</strong>
+                        <span>Winston-Salem, NC - Auto Insurance</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"After my accident, Bill's team handled everything with my insurance company. They made a stressful situation so much easier. Can't recommend them enough!"</p>
+                    <div class="testimonial-author">
+                        <strong>Maria S.</strong>
+                        <span>Elkin, NC - Auto Claims Support</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">"I was with the same company for 15 years. Bill showed me I was overpaying by $600 annually! Now I have better coverage for less money."</p>
+                    <div class="testimonial-author">
+                        <strong>Thomas & Patricia H.</strong>
+                        <span>Mount Airy, NC - Multi-Vehicle Insurance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%234CAF50'/%3E%3Cpath d='M30 50l15 15 25-30' stroke='white' stroke-width='5' fill='none'/%3E%3C/svg%3E" alt="Licensed Agent">
+                    <span>Licensed NC Agent<br>Since 2004</span>
+                </div>
+                <div class="trust-badge">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232196F3'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='30' font-weight='bold'%3E20+%3C/text%3E%3C/svg%3E" alt="20+ Years Experience">
+                    <span>20+ Years<br>Experience</span>
+                </div>
+                <div class="trust-badge">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23FF9800'/%3E%3Cpath d='M50 20l10 20 22 3-16 15 4 22-20-10-20 10 4-22-16-15 22-3z' fill='white'/%3E%3C/svg%3E" alt="5 Star Reviews">
+                    <span>5 Star<br>Google Reviews</span>
+                </div>
+                <div class="trust-badge">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%239C27B0'/%3E%3Cpath d='M35 60v-5c0-8.3 6.7-15 15-15s15 6.7 15 15v5M40 60h20v15H40z' stroke='white' stroke-width='3' fill='none'/%3E%3C/svg%3E" alt="Secure & Confidential">
+                    <span>Fast & Easy<br>Quote Process</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real experiences from North Carolina drivers</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "The coverage calculator helped me realize I was underinsured. After adjusting my policy, I saved money and got better protection. The comparison tool made it easy to find the best rates in Charlotte."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Michael R.</strong>
+                        <span>Charlotte, NC - Progressive Customer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "As a new resident, I didn't know about NC's insurance requirements. This site explained everything clearly. Found great coverage with State Farm and saved $800 annually!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Jennifer L.</strong>
+                        <span>Raleigh, NC - State Farm Customer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "The coverage analyzer showed gaps I didn't know existed. Added uninsured motorist coverage just in time - got hit by an uninsured driver 2 months later. This site literally saved me thousands!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>David K.</strong>
+                        <span>Greensboro, NC - GEICO Customer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Used the calculator for both my cars and my teen driver. The recommendations were spot-on. Found discounts I didn't know about and switched to Nationwide for better rates."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Patricia M.</strong>
+                        <span>Durham, NC - Nationwide Customer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "Military family here - the USAA information was exactly what we needed. The site helped us understand our coverage options and maximize our military discounts."
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>James T.</strong>
+                        <span>Fayetteville, NC - USAA Customer</span>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <p class="testimonial-text">
+                        "After a fender bender, I realized my coverage wasn't enough. This site helped me understand liability limits and find better protection with Farm Bureau. Great local insights!"
+                    </p>
+                    <div class="testimonial-author">
+                        <strong>Sarah W.</strong>
+                        <span>Wilmington, NC - Farm Bureau Customer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#FFD700"/>
+                        <path d="M50 20l8.09 24.9h26.18l-21.18 15.4L71.18 85.2 50 69.8 28.82 85.2l8.09-24.9L15.73 44.9h26.18L50 20z" fill="#FFA500"/>
+                    </svg>
+                    <span>4.9/5 Average<br>Customer Rating</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="30" width="60" height="40" rx="5" fill="#4CAF50"/>
+                        <path d="M40 50l8 8L60 42" stroke="white" stroke-width="4" fill="none"/>
+                        <text x="50" y="85" text-anchor="middle" fill="#333" font-size="12" font-weight="bold">VERIFIED</text>
+                    </svg>
+                    <span>NC Licensed<br>Insurance Advisors</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#2196F3"/>
+                        <path d="M35 60v-5c0-8.3 6.7-15 15-15s15 6.7 15 15v5M40 60h20v15H40z" stroke="white" stroke-width="3" fill="none"/>
+                    </svg>
+                    <span>Your Information<br>100% Secure</span>
+                </div>
+                <div class="trust-badge">
+                    <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="50" cy="50" r="45" fill="#9C27B0"/>
+                        <text x="50" y="40" text-anchor="middle" fill="white" font-size="24" font-weight="bold">24/7</text>
+                        <text x="50" y="65" text-anchor="middle" fill="white" font-size="14">Support</text>
+                    </svg>
+                    <span>Always Available<br>When You Need Us</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <h3>Bill Layne Insurance Agency</h3>
+                    <p>Your trusted partner for auto insurance in North Carolina since 1992.</p>
+                    <p>Licensed NC Insurance Agency<br>
+                    Serving Elkin, Mount Airy, and all of NC</p>
+                </div>
+                
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>📞 Phone: <a href="tel:3368351993">(336) 835-1993</a></p>
+                    <p>✉️ Email: <a href="mailto:Save@BillLayneInsurance.com">Save@BillLayneInsurance.com</a></p>
+                    <p>🏢 Address: 1283 N Bridge St<br>Elkin, NC 28621</p>
+                </div>
+                
+                <div>
+                    <h3>Quick Links</h3>
+                    <p><a href="#coverage">Coverage Types</a></p>
+                    <p><a href="#discounts">Available Discounts</a></p>
+                    <p><a href="#resources">Resources</a></p>
+                    <p><a href="https://www.BillLayneInsurance.com" target="_blank">Visit Our Main Site</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Bill Layne Insurance Agency. All rights reserved. | Licensed NC Insurance Agency</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <span id="notification-text"></span>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="app.min.js"></script>
+
+    <!-- Calculator Modal -->
+    <div id="calculatorModal" class="calculator-modal">
+        <div class="calculator-container">
+            <button class="calculator-close" onclick="closeCalculatorModal()">×</button>
+            
+            <div class="calculator-header">
+                <h2>Auto Insurance Coverage Calculator</h2>
+                <p>Get personalized coverage recommendations based on your financial situation</p>
+            </div>
+            
+            <div class="calculator-body">
+                <form id="calculatorForm">
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><span>👤</span> Personal Information</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="calc-age">Your Age</label>
+                                <input type="number" id="calc-age" min="16" max="100" value="35" required>
+                                <small>Affects risk assessment and rates</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-income">Annual Household Income</label>
+                                <input type="number" id="calc-income" min="0" step="1000" value="75000" required>
+                                <small>Helps determine liability coverage needs</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-drivers">Number of Drivers</label>
+                                <input type="number" id="calc-drivers" min="1" max="10" value="2" required>
+                                <small>All licensed drivers in household</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-vehicles">Number of Vehicles</label>
+                                <input type="number" id="calc-vehicles" min="1" max="10" value="2" required>
+                                <small>All vehicles to be insured</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Assets -->
+                    <div class="form-section">
+                        <h3><span>🏠</span> Assets & Property</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="calc-home-value">Home Value (if you own)</label>
+                                <input type="number" id="calc-home-value" min="0" step="10000" value="250000">
+                                <small>Enter 0 if you rent</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-savings">Total Savings & Investments</label>
+                                <input type="number" id="calc-savings" min="0" step="1000" value="50000">
+                                <small>Include 401k, stocks, savings accounts</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-vehicle-value">Total Value of All Vehicles</label>
+                                <input type="number" id="calc-vehicle-value" min="0" step="1000" value="35000">
+                                <small>Combined value of all your vehicles</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="calc-other-assets">Other Significant Assets</label>
+                                <input type="number" id="calc-other-assets" min="0" step="1000" value="0">
+                                <small>Boats, RVs, valuable collections, etc.</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Risk Factors -->
+                    <div class="form-section">
+                        <h3><span>⚠️</span> Risk Factors</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Check all that apply:</label>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-teen-driver">
+                                    <label for="calc-teen-driver">Teen driver(s) in household</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-long-commute">
+                                    <label for="calc-long-commute">Long commute (25+ miles each way)</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-business-use">
+                                    <label for="calc-business-use">Use vehicle for business</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-towing">
+                                    <label for="calc-towing">Tow trailers or boats</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-rideshare">
+                                    <label for="calc-rideshare">Drive for Uber/Lyft</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Vehicle financing:</label>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-financed">
+                                    <label for="calc-financed">Have car loan or lease</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-new-car">
+                                    <label for="calc-new-car">Own vehicle less than 3 years old</label>
+                                </div>
+                                
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="calc-luxury">
+                                    <label for="calc-luxury">Own luxury or sports vehicle</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="calculate-btn" onclick="calculateCoverage()">
+                        Calculate My Coverage Needs
+                    </button>
+                </form>
+
+                <!-- Results Section -->
+                <div id="calculator-results">
+                    <div class="results-header">
+                        <h3>Your Recommended Coverage</h3>
+                        <p>Based on your financial profile and risk factors</p>
+                    </div>
+                    
+                    <div class="results-body">
+                        <div class="coverage-recommendation">
+                            <h4 style="color: var(--color-accent); margin-bottom: var(--space-lg);">✅ Recommended Coverage Levels</h4>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Bodily Injury (per person)</span>
+                                <span class="coverage-amount" id="rec-bi-person">$100,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Bodily Injury (per accident)</span>
+                                <span class="coverage-amount" id="rec-bi-accident">$300,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Property Damage</span>
+                                <span class="coverage-amount" id="rec-pd">$100,000</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Uninsured Motorist</span>
+                                <span class="coverage-amount" id="rec-um">100/300/50</span>
+                            </div>
+                            <div class="coverage-item">
+                                <span class="coverage-label">Medical Payments</span>
+                                <span class="coverage-amount" id="rec-med">$5,000</span>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-box" style="margin-top: var(--space-lg);">
+                            <h4>💰 Asset Protection Analysis</h4>
+                            <p id="asset-explanation">Based on your assets, you need adequate liability coverage to protect your financial future.</p>
+                        </div>
+                        
+                        <div class="feature-box" style="margin-top: var(--space-lg);">
+                            <h4>🚗 Vehicle Coverage Recommendation</h4>
+                            <p id="vehicle-explanation">Consider comprehensive and collision coverage for your vehicles.</p>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: var(--space-2xl);">
+                            <p><strong>Ready to get these coverage levels at the best price?</strong></p>
+                            <div class="hero-buttons" style="margin-top: var(--space-lg);">
+                                <a href="tel:3368351993" class="btn btn--primary">📞 Call (336) 835-1993</a>
+                                <a href="mailto:Save@BillLayneInsurance.com?subject=Coverage Calculator Results" class="btn btn--secondary">✉️ Email My Results</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto Analyzer Modal -->
+    <div id="autoAnalyzerModal" class="calculator-modal">
+        <div class="calculator-container">
+            <button class="calculator-close" onclick="closeAutoAnalyzer()">×</button>
+            
+            <div class="calculator-header">
+                <h2>Auto Coverage Analyzer</h2>
+                <p>Analyze your current coverage and find gaps & savings opportunities</p>
+            </div>
+            
+            <div class="calculator-body">
+                <form id="autoAnalyzerForm">
+                    <!-- Current Coverage -->
+                    <div class="form-section">
+                        <h3><span>📋</span> Your Current Coverage</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="current-bi">Bodily Injury Liability</label>
+                                <select id="current-bi" required>
+                                    <option value="30/60">30/60 (Below NC Minimum)</option>
+                                    <option value="50/100" selected>50/100 (NC Minimum)</option>
+                                    <option value="100/300">100/300 (Recommended)</option>
+                                    <option value="250/500">250/500 (Enhanced)</option>
+                                    <option value="500/1000">500/1000 (Premium)</option>
+                                </select>
+                                <small>Per person/Per accident (in thousands)</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-pd">Property Damage Liability</label>
+                                <input type="number" id="current-pd" min="0" step="5000" value="50000" required>
+                                <small>Current property damage limit</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Uninsured Motorist Coverage</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-um" checked>
+                                    <label for="current-um">I have uninsured motorist coverage</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-med">Medical Payments Coverage</label>
+                                <input type="number" id="current-med" min="0" step="1000" value="0" placeholder="0 if none">
+                                <small>Current medical payments limit</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Comprehensive & Collision</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-comp">
+                                    <label for="current-comp">Comprehensive coverage</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="current-coll">
+                                    <label for="current-coll">Collision coverage</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="current-deductible">Deductible Amount</label>
+                                <select id="current-deductible">
+                                    <option value="0">No comp/collision</option>
+                                    <option value="250">$250</option>
+                                    <option value="500" selected>$500</option>
+                                    <option value="1000">$1,000</option>
+                                    <option value="2500">$2,500</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Information -->
+                    <div class="form-section">
+                        <h3><span>🏠</span> About You</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Property Ownership</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="home-owner">
+                                    <label for="home-owner">I own my home</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="has-assets">
+                                    <label for="has-assets">I have significant savings/investments</label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="num-vehicles">Number of Vehicles</label>
+                                <input type="number" id="num-vehicles" min="1" max="10" value="1" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-age">Age of Newest Vehicle</label>
+                                <input type="number" id="vehicle-age" min="0" max="50" value="5" required>
+                                <small>Years old</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="vehicle-value-analyzer">Approximate Vehicle Value</label>
+                                <input type="number" id="vehicle-value-analyzer" min="0" step="1000" value="15000" required>
+                                <small>Current market value</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Discount Eligibility -->
+                    <div class="form-section">
+                        <h3><span>💰</span> Current Discounts</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Check all that apply:</label>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="multi-policy">
+                                    <label for="multi-policy">Bundle with home/renters insurance</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="good-driver">
+                                    <label for="good-driver">No accidents/tickets in 3 years</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="defensive-driving">
+                                    <label for="defensive-driving">Completed defensive driving course</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="good-student">
+                                    <label for="good-student">Good student (3.0+ GPA)</label>
+                                </div>
+                                <div class="checkbox-group">
+                                    <input type="checkbox" id="low-mileage">
+                                    <label for="low-mileage">Drive less than 7,500 miles/year</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="calculate-btn" onclick="analyzeAutoCoverage()">
+                        Analyze My Coverage
+                    </button>
+                </form>
+
+                <!-- Analysis Results -->
+                <div id="auto-analyzer-results" style="display: none;">
+                    <div class="results-header">
+                        <h3>Coverage Analysis Results</h3>
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 20px; margin-top: 20px;">
+                            <div style="text-align: center;">
+                                <div style="font-size: 4rem; font-weight: 700; color: white;" id="coverage-score">85</div>
+                                <div style="font-size: 1.2rem;" id="score-message">Good Coverage</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-body">
+                        <!-- Coverage Gaps -->
+                        <div class="feature-box" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.1) 0%, rgba(252, 165, 165, 0.1) 100%); border-left-color: var(--color-error);">
+                            <h4>🚨 Coverage Gaps Identified</h4>
+                            <div id="coverage-gaps">
+                                <!-- Gaps will be inserted here -->
+                            </div>
+                        </div>
+                        
+                        <!-- Savings Opportunities -->
+                        <div class="feature-box" style="margin-top: var(--space-lg); background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(52, 211, 153, 0.1) 100%); border-left-color: var(--color-success);">
+                            <h4>💰 Savings Opportunities</h4>
+                            <div id="savings-opportunities">
+                                <!-- Savings will be inserted here -->
+                            </div>
+                        </div>
+                        
+                        <div style="text-align: center; margin-top: var(--space-2xl);">
+                            <p><strong>Ready to optimize your coverage and save money?</strong></p>
+                            <div class="hero-buttons" style="margin-top: var(--space-lg);">
+                                <a href="tel:3368351993" class="btn btn--primary">📞 Call (336) 835-1993</a>
+                                <a href="mailto:Save@BillLayneInsurance.com?subject=Auto Coverage Analysis" class="btn btn--secondary">✉️ Email My Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal Overlay for Mobile Apps -->
+    <div id="mobileAppsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 9999; overflow: auto;">
+        <div style="position: relative; width: 95%; max-width: 1200px; height: 90%; margin: 2.5% auto; background-color: var(--color-background); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); overflow: hidden;">
+            <div style="position: sticky; top: 0; background: linear-gradient(135deg, var(--color-gradient-1) 0%, var(--color-gradient-2) 100%); color: white; padding: var(--space-lg); display: flex; justify-content: space-between; align-items: center; z-index: 10;">
+                <h2 style="margin: 0; font-size: var(--font-size-lg); font-weight: 600;">Insurance Company Mobile Apps & Contact Information</h2>
+                <button onclick="closeMobileAppsModal()" style="background: rgba(255, 255, 255, 0.2); border: none; color: white; font-size: 1.5rem; padding: 0.5rem 1rem; border-radius: var(--radius-md); cursor: pointer; transition: var(--transition-base);" onmouseover="this.style.background='rgba(255, 255, 255, 0.3)'" onmouseout="this.style.background='rgba(255, 255, 255, 0.2)'">&times;</button>
+            </div>
+            <div style="overflow-y: auto; height: calc(100% - 80px); padding: var(--space-xl); background-color: var(--color-surface);">
+                <div class="insurance-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: var(--space-lg);">
+                    
+                    <!-- Alamance Farmers Mutual -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Alamance Farmers' Mutual</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://alamancefarmers.com" target="_blank" style="color: var(--color-primary-light);">alamancefarmers.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-336-226-7872" style="color: var(--color-primary-light);">1-336-226-7872</a></p>
+                            <p><strong>Payment:</strong> <a href="https://alamancefarmers.com/policyholders/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/afmic-policyholder-portal/id1537256584" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.afmic.policyholder" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Allstate -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Allstate</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.allstate.com" target="_blank" style="color: var(--color-primary-light);">allstate.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-255-7828" style="color: var(--color-primary-light);">1-800-255-7828</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-669-2214" style="color: var(--color-primary-light);">1-800-669-2214</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.allstate.com/myaccount" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/allstate-mobile/id376476389" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.allstate.view" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- American Modern -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">American Modern</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.amig.com" target="_blank" style="color: var(--color-primary-light);">amig.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-543-2644" style="color: var(--color-primary-light);">1-800-543-2644</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-375-2075" style="color: var(--color-primary-light);">1-800-375-2075</a></p>
+                            <p><strong>Payment:</strong> <a href="https://policyholders.amig.com/content/munichre/amiggrp/policy-holder/storefront/en/landing-page/make-a-payment.html" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong> Web portal available
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chubb -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Chubb</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.chubb.com" target="_blank" style="color: var(--color-primary-light);">chubb.com</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-252-4670" style="color: var(--color-primary-light);">1-800-252-4670</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.chubb.com/securePersonal/login?redirect=true" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/chubb-mobile/id1348381518" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.chubb.na.prsautocard" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dairyland -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Dairyland</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.dairylandinsurance.com" target="_blank" style="color: var(--color-primary-light);">dairylandinsurance.com</a></p>
+                            <p><strong>General/Claims:</strong> <a href="tel:1-800-334-0090" style="color: var(--color-primary-light);">1-800-334-0090</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.dairylandinsurance.com/make-a-payment" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/dairyland/id1499324843" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.dairyland.mobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Erie Insurance -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Erie Insurance</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.erieinsurance.com" target="_blank" style="color: var(--color-primary-light);">erieinsurance.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-458-0811" style="color: var(--color-primary-light);">1-800-458-0811</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-367-3743" style="color: var(--color-primary-light);">1-800-367-3743</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.erieinsurance.com/support-center/billing-and-payments" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/erie-insurance-mobile/id1447206059" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.erieinsurance.customermobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Foremost -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Foremost</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.foremost.com" target="_blank" style="color: var(--color-primary-light);">foremost.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-527-3905" style="color: var(--color-primary-light);">1-800-527-3905</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-527-3907" style="color: var(--color-primary-light);">1-800-527-3907</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.foremost.com/payonline/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/foremost-insurance-mobile/id1455533198" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.foremost.app" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GEICO -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">GEICO</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.geico.com" target="_blank" style="color: var(--color-primary-light);">geico.com</a></p>
+                            <p><strong>General/Claims:</strong> <a href="tel:1-800-861-8380" style="color: var(--color-primary-light);">1-800-861-8380</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.geico.com/information/make-a-payment/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/geico-mobile-car-insurance/id331763306" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.geico.mobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- The Hartford -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">The Hartford</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.thehartford.com" target="_blank" style="color: var(--color-primary-light);">thehartford.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-423-6789" style="color: var(--color-primary-light);">1-800-423-6789</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-243-5860" style="color: var(--color-primary-light);">1-800-243-5860</a></p>
+                            <p><strong>Payment:</strong> <a href="https://account.thehartford.com/customer/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/the-hartford-mobile/id1435233346" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.thehartford.mobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Liberty Mutual -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Liberty Mutual</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.libertymutual.com" target="_blank" style="color: var(--color-primary-light);">libertymutual.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-290-7933" style="color: var(--color-primary-light);">1-800-290-7933</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-225-2467" style="color: var(--color-primary-light);">1-800-225-2467</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.libertymutual.com/customer-support/billing-and-payment-options" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/liberty-mutual-mobile/id453676947" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.libertymutual.lm_android" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- National General -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">National General</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.nationalgeneral.com" target="_blank" style="color: var(--color-primary-light);">nationalgeneral.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-888-293-5108" style="color: var(--color-primary-light);">1-888-293-5108</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-325-1088" style="color: var(--color-primary-light);">1-800-325-1088</a></p>
+                            <p><strong>Payment:</strong> <a href="https://online.nationalgeneral.com/account/signin/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/natgen-mobile/id1495393910" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.nationalgeneral.natgenmobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nationwide -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Nationwide</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.nationwide.com" target="_blank" style="color: var(--color-primary-light);">nationwide.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-877-669-6877" style="color: var(--color-primary-light);">1-877-669-6877</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-421-3535" style="color: var(--color-primary-light);">1-800-421-3535</a></p>
+                            <p><strong>Payment:</strong> <a href="https://myaccount.nationwide.com/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/nationwide-mobile/id311627534" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.nationwide.mobile.android.nwmobile" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Progressive -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Progressive</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.progressive.com" target="_blank" style="color: var(--color-primary-light);">progressive.com</a></p>
+                            <p><strong>General/Claims:</strong> <a href="tel:1-800-776-4737" style="color: var(--color-primary-light);">1-800-776-4737</a></p>
+                            <p><strong>Payment:</strong> <a href="https://onlineservice.progressive.com/SelfService.Web.Account.Login/LogIn.aspx" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/progressive/id357563236" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.phonevalley.progressive" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Safeco -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Safeco</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.safeco.com" target="_blank" style="color: var(--color-primary-light);">safeco.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-332-3226" style="color: var(--color-primary-light);">1-800-332-3226</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-332-3226" style="color: var(--color-primary-light);">1-800-332-3226</a></p>
+                            <p><strong>Payment:</strong> <a href="https://customer.safeco.com/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/safeco-mobile/id1162648539" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.safecoinsurance.consumer" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State Farm -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">State Farm</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.statefarm.com" target="_blank" style="color: var(--color-primary-light);">statefarm.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-732-5246" style="color: var(--color-primary-light);">1-800-732-5246</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-732-5246" style="color: var(--color-primary-light);">1-800-732-5246</a></p>
+                            <p><strong>Payment:</strong> <a href="https://financials.statefarm.com/guest-pay/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/state-farm/id318211812" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.statefarm.pocketagent" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Travelers -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Travelers</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.travelers.com" target="_blank" style="color: var(--color-primary-light);">travelers.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-842-5075" style="color: var(--color-primary-light);">1-800-842-5075</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-252-4633" style="color: var(--color-primary-light);">1-800-252-4633</a></p>
+                            <p><strong>Payment:</strong> <a href="https://myclaim.travelers.com/payguest/" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/travelers-mobile/id441930925" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.travelers.digitalservice" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Universal Property -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">Universal Property</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.universalproperty.com" target="_blank" style="color: var(--color-primary-light);">universalproperty.com</a></p>
+                            <p><strong>General:</strong> <a href="tel:1-800-285-2750" style="color: var(--color-primary-light);">1-800-285-2750</a></p>
+                            <p><strong>Claims:</strong> <a href="tel:1-800-760-8326" style="color: var(--color-primary-light);">1-800-760-8326</a></p>
+                            <p><strong>Payment:</strong> <a href="https://upcic.com/index.php/pay" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/upcic-mobile/id972768393" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.universalproperty.android" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- USAA -->
+                    <div class="card" style="height: auto;">
+                        <h3 style="color: var(--color-primary); margin-bottom: var(--space-md);">USAA</h3>
+                        <div style="line-height: 1.8;">
+                            <p><strong>Website:</strong> <a href="https://www.usaa.com" target="_blank" style="color: var(--color-primary-light);">usaa.com</a></p>
+                            <p><strong>General/Claims:</strong> <a href="tel:1-800-531-8722" style="color: var(--color-primary-light);">1-800-531-8722</a></p>
+                            <p><strong>Payment:</strong> <a href="https://www.usaa.com/my/logon" target="_blank" style="color: var(--color-primary-light);">Pay Online</a></p>
+                            <p style="font-style: italic; color: var(--color-text-secondary);">Military members & families only</p>
+                            <div style="margin-top: var(--space-sm);">
+                                <strong>Mobile App:</strong>
+                                <div style="display: flex; gap: var(--space-md); margin-top: var(--space-xs);">
+                                    <a href="https://apps.apple.com/us/app/usaa-mobile/id322383343" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">App Store</a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.usaa.mobile.android.usaa" target="_blank" class="btn btn--secondary" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Google Play</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
