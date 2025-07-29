@@ -700,14 +700,18 @@
             const isScrolled = window.scrollY > 50;
             header.classList.toggle('header-scrolled', isScrolled);
             
-            // Handle logo color for desktop only (mobile always dark)
+            // Handle logo color
             if (window.innerWidth >= 768) {
-                headerLogo.classList.toggle('text-white', !isScrolled);
-                headerLogo.classList.toggle('text-amber-800', isScrolled);
-            } else {
-                headerLogo.classList.add('text-amber-800');
-                headerLogo.classList.remove('text-white');
+                // Desktop: white when not scrolled, amber when scrolled
+                if (isScrolled) {
+                    headerLogo.classList.remove('md:text-white');
+                    headerLogo.classList.add('md:text-amber-800');
+                } else {
+                    headerLogo.classList.remove('md:text-amber-800');
+                    headerLogo.classList.add('md:text-white');
+                }
             }
+            // Mobile color is already set as text-amber-800 in HTML
             
             navLinks.forEach(link => {
                 link.classList.toggle('text-white', !isScrolled);
