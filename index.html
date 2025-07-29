@@ -103,7 +103,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <!-- Logo -->
-                <a href="https://billlayneinsurance.com/" class="text-gray-800 md:text-white text-2xl font-bold">Bill Layne Insurance</a>
+                <a href="https://billlayneinsurance.com/" class="text-amber-800 md:text-white text-2xl font-bold">Bill Layne Insurance</a>
                 
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-1">
@@ -134,7 +134,7 @@
                 </nav>
                 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="md:hidden text-gray-800 text-2xl p-2 rounded-lg hover:bg-gray-100 transition-colors">
+                <button id="mobile-menu-button" class="md:hidden text-amber-800 text-2xl p-2 rounded-lg hover:bg-gray-100 transition-colors">
                     <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
                     </svg>
@@ -703,9 +703,9 @@
             // Handle logo color for desktop only (mobile always dark)
             if (window.innerWidth >= 768) {
                 headerLogo.classList.toggle('text-white', !isScrolled);
-                headerLogo.classList.toggle('text-gray-800', isScrolled);
+                headerLogo.classList.toggle('text-amber-800', isScrolled);
             } else {
-                headerLogo.classList.add('text-gray-800');
+                headerLogo.classList.add('text-amber-800');
                 headerLogo.classList.remove('text-white');
             }
             
