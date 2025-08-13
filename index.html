@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Auto Insurance Center - Bill Layne Insurance Agency</title>
+    <!-- CONFIRMED: Auto Insurance Center content - Force GitHub update -->
+    <meta name="description" content="Save money on auto insurance in North Carolina. Compare quotes from top carriers, find discounts, and get better coverage. Call (336) 835-1993.">
+    
+    <!-- SEO Meta Tags -->
+    <link rel="canonical" href="https://billlayne.github.io/Auto-Insurance-Center/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="NC Auto Insurance Center - Bill Layne Insurance Agency">
+    <meta property="og:description" content="Compare auto insurance quotes from multiple carriers. Save up to 40% on your premium. Licensed NC agency serving Elkin, Mount Airy & Surry County.">
+    <meta property="og:url" content="https://billlayne.github.io/Auto-Insurance-Center/">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            important: true,
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* F-Pattern Optimized Styles */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-dark: #1d4ed8;
+            --accent-green: #10b981;
+            --text-gray: #374151;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+        
+        /* F-Pattern Header - Top horizontal bar */
+        .f-header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        
+        .f-header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* F-Pattern Hero with Auto Insurance Theme */
+        .f-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #3b82f6 100%);
+            position: relative;
+            overflow: hidden;
+            padding-top: 180px;
+        }
+        
+        @media (min-width: 768px) {
+            .f-hero {
+                padding-top: 120px;
+            }
+        }
+        
+        .f-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.03"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+        
+        /* Service Icons Styles */
+        .service-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            margin: 0.75rem 0 0.5rem 0;
+            padding: 0;
+        }
+        
+        .service-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+            cursor: pointer;
+            text-decoration: none !important;
+        }
+        
+        a.service-icon {
+            color: inherit;
+        }
+        
+        .service-icon:nth-child(1) { animation-delay: 0.1s; }
+        .service-icon:nth-child(2) { animation-delay: 0.2s; }
+        .service-icon:nth-child(3) { animation-delay: 0.3s; }
+        
+        .service-icon-circle {
+            font-size: 1.75rem;
+            color: #60a5fa;
+            background: rgba(255, 255, 255, 0.1);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .service-icon:hover .service-icon-circle {
+            transform: scale(1.15);
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        
+        .service-icon span {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #cbd5e1;
+            white-space: nowrap;
+            text-align: center;
+            line-height: 0.9;
+        }
+        
+        @media (min-width: 768px) {
+            .service-icons {
+                gap: 3.75rem;
+                margin: 1.5rem 0 1.25rem 0;
+            }
+            
+            .service-icon-circle {
+                width: 90px;
+                height: 90px;
+                font-size: 2.75rem;
+            }
+            
+            .service-icon span {
+                font-size: 1rem;
+            }
+        }
+        
+        /* F-Pattern Left Sidebar */
+        .f-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        /* Modern Gradient Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, #1e40af 100%);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-blue);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Trust Badge */
+        .trust-badge {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Coverage Card */
+        .coverage-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .coverage-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Universal Menu */
+        .navigation-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+        
+        .navigation-menu.active {
+            right: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .navigation-menu {
+                max-width: 400px;
+                padding: 30px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .navigation-menu {
+                max-width: 450px;
+                padding: 40px;
+            }
+        }
+        
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hamburger Animation */
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-gray);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Trust Indicators Grid */
+        .trust-indicators-grid {
+            font-size: 0.65rem;
+        }
+        
+        .trust-indicator-row {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 0.35rem;
+            color: #cbd5e1;
+        }
+        
+        @media (min-width: 768px) {
+            .trust-indicators-grid {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                font-size: 1rem;
+            }
+            
+            .trust-indicator-row {
+                margin-bottom: 0;
+                gap: 0;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Carriers Grid */
+        .carriers-grid {
+            display: grid;
+            gap: 1.5rem;
+            justify-items: center;
+            align-items: center;
+        }
+        
+        @media (min-width: 1024px) {
+            .carriers-grid {
+                grid-template-columns: repeat(7, 1fr);
+                max-width: 100%;
+            }
+        }
+        
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .carriers-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .carriers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        
+        /* Logo Containers */
+        a.logo-container, .logo-container {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 140px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        @media (max-width: 767px) {
+            a.logo-container, .logo-container {
+                max-width: 100%;
+                height: 70px;
+            }
+        }
+        
+        a.logo-container:hover, .logo-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo-container img {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .f-sidebar {
+                position: static;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Menu Overlay -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+    
+    <!-- Header - F-Pattern Top Bar -->
+    <header id="main-header" class="f-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-2xl font-bold text-blue-800">
+                        Bill Layne Insurance
+                    </a>
+                    <p class="text-xs text-gray-600 hidden sm:block">NC Auto Insurance Experts</p>
+                </div>
+                
+                <!-- Right Side: Phone, CTA, and Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Desktop CTA -->
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="tel:3368351993" class="text-gray-700 font-semibold hover:text-blue-600 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>(336) 835-1993
+                        </a>
+                        <a href="https://billlayneinsurance.com/auto-quote.html" class="btn-primary">Get Free Quote</a>
+                    </div>
+                    
+                    <!-- Universal Menu Button -->
+                    <button id="menu-toggle-btn" class="hamburger p-2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Universal Menu -->
+    <div id="navigation-menu" class="navigation-menu">
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-xl lg:text-2xl font-bold text-gray-800">Navigation</h3>
+            <button id="close-menu" class="text-gray-500 hover:text-gray-700 p-2">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="https://billlayneinsurance.com/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-home mr-3 w-5"></i>Home
+            </a>
+            <a href="https://billlayneinsurance.com/areas-we-serve.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-th-large mr-3 w-5"></i>Services
+            </a>
+            <a href="https://billlayne.github.io/Auto-Insurance-Center/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-car mr-3 w-5"></i>Auto Insurance
+            </a>
+            <a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-home mr-3 w-5"></i>Home Insurance
+            </a>
+            <a href="https://billlayne.github.io/NC-Insurance-Claims-Center.github.io/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-file-alt mr-3 w-5"></i>Claims Center
+            </a>
+            <a href="https://billlayne.github.io/Resources/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-book mr-3 w-5"></i>Resources
+            </a>
+            <a href="https://billlayneinsurance.com/blog.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-blog mr-3 w-5"></i>Blog
+            </a>
+            <a href="https://billlayneinsurance.com/contact-us.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-envelope mr-3 w-5"></i>Contact Us
+            </a>
+        </nav>
+        <div class="mt-8 space-y-4">
+            <a href="tel:3368351993" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+            </a>
+            <a href="https://billlayneinsurance.com/auto-quote.html" class="block w-full text-center btn-primary">
+                <i class="fas fa-calculator mr-2"></i>Get Free Quote
+            </a>
+        </div>
+        
+        <!-- Desktop-only additional info -->
+        <div class="hidden lg:block mt-8 pt-6 border-t border-gray-200">
+            <div class="text-center">
+                <p class="text-sm text-gray-600 mb-2">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    1283 N Bridge St, Elkin, NC 28621
+                </p>
+                <p class="text-sm text-gray-600">
+                    <i class="fas fa-clock mr-2"></i>
+                    Mon-Fri: 9AM-5PM
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section - F-Pattern Second Horizontal Bar -->
+        <section class="f-hero pb-8 sm:pb-20 lg:pb-32 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="animate-fade-in-up">
+                    <!-- Headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] sm:leading-tight mb-2">
+                        NC Auto Insurance<br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-200 to-cyan-200">
+                            Lower Rates. Better Coverage.
+                        </span>
+                    </h1>
+                    
+                    <!-- Service Icons Section -->
+                    <div class="service-icons">
+                        <a href="#coverage" class="service-icon">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <span>Coverage Options</span>
+                        </a>
+                        <a href="#discounts" class="service-icon">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <span>Save 40%</span>
+                        </a>
+                        <a href="#nc-requirements" class="service-icon">
+                            <div class="service-icon-circle">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <span>NC Requirements</span>
+                        </a>
+                    </div>
+                    
+                    <!-- Description -->
+                    <p class="text-base sm:text-xl lg:text-2xl text-blue-100 mb-3 leading-snug sm:leading-relaxed max-w-4xl mx-auto">
+                        Compare quotes from multiple carriers in minutes. We'll find you the best protection at the lowest price - average savings of $800/year.
+                    </p>
+                    
+                    <!-- Primary CTAs -->
+                    <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-3 justify-center">
+                        <a href="https://billlayneinsurance.com/auto-quote.html" class="btn-primary text-base sm:text-lg">
+                            <i class="fas fa-calculator mr-2"></i>Get Your Free Quote
+                        </a>
+                        <a href="tel:3368351993" class="btn-secondary text-base sm:text-lg">
+                            <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+                        </a>
+                    </div>
+                    
+                    <!-- Trust Indicators -->
+                    <div class="trust-indicators-grid text-blue-200">
+                        <div class="trust-indicator-row">
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-star text-yellow-400 mr-1 text-xs"></i>
+                                <span class="font-semibold">4.8★ Google Reviews</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-green-400 mr-1 text-xs"></i>
+                                <span>NC Licensed #1740293</span>
+                            </div>
+                        </div>
+                        <div class="trust-indicator-row">
+                            <div class="flex items-center justify-center">
+                                <i class="fas fa-clock text-blue-300 mr-1 text-xs"></i>
+                                <span>Same-Day Quotes</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Carriers Section -->
+        <section class="py-12 bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h3 class="text-center text-gray-600 text-sm font-bold uppercase tracking-wider mb-8">
+                    We Compare Quotes From North Carolina's Top Auto Insurance Carriers
+                </h3>
+                <div class="carriers-grid">
+                    <a href="carriers/progressive-north-carolina.html" class="logo-container" title="Progressive Insurance North Carolina">
+                        <img src="images/progressive logo.webp" alt="Progressive Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/nationwide-north-carolina.html" class="logo-container" title="Nationwide Insurance North Carolina">
+                        <img src="images/Nationwide logo.webp" alt="Nationwide Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/travelers-north-carolina.html" class="logo-container" title="Travelers Insurance North Carolina">
+                        <img src="images/Travelers Logo.webp" alt="Travelers Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/national-general-north-carolina.html" class="logo-container" title="National General Insurance North Carolina">
+                        <img src="images/National General Logo.webp" alt="National General Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/dairyland-north-carolina.html" class="logo-container" title="Dairyland Insurance North Carolina">
+                        <img src="images/Dairyland Logo.webp" alt="Dairyland Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/foremost-north-carolina.html" class="logo-container" title="Foremost Insurance North Carolina">
+                        <img src="images/foremost.webp" alt="Foremost Insurance" loading="lazy">
+                    </a>
+                    <a href="carriers/hagerty-north-carolina.html" class="logo-container" title="Hagerty Classic Car Insurance">
+                        <img src="images/Hagerty.webp" alt="Hagerty Insurance" loading="lazy">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- F-Pattern Content Layout -->
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <!-- Left Sidebar - F-Pattern Vertical Emphasis -->
+                    <div class="lg:col-span-4">
+                        <div class="f-sidebar space-y-8">
+                            <!-- Quick Quote Widget -->
+                            <div class="trust-badge">
+                                <h4 class="font-bold text-gray-800 mb-4 text-xl">Rate Estimator Tool</h4>
+                                <p class="text-xs text-gray-500 mb-3 italic">*This is an estimate only. Actual rates may vary.</p>
+                                <div class="space-y-3">
+                                    <select id="age-select" class="form-input">
+                                        <option value="">Select Your Age</option>
+                                        <option value="16-25">16-25</option>
+                                        <option value="26-35">26-35</option>
+                                        <option value="36-50">36-50</option>
+                                        <option value="51-65">51-65</option>
+                                        <option value="65+">65+</option>
+                                    </select>
+                                    <select id="record-select" class="form-input">
+                                        <option value="">Driving Record</option>
+                                        <option value="clean">Clean (No tickets/accidents)</option>
+                                        <option value="minor">1 Minor Violation</option>
+                                        <option value="accident">1 Accident</option>
+                                        <option value="multiple">Multiple Violations</option>
+                                    </select>
+                                    <button onclick="calculateEstimate()" class="btn-primary w-full block text-center">
+                                        Calculate Estimate
+                                    </button>
+                                    
+                                    <!-- Estimate Display -->
+                                    <div id="estimate-result" class="hidden mt-4 p-4 bg-blue-50 rounded-lg">
+                                        <p class="text-sm font-semibold text-gray-700 mb-2">Estimated Monthly Premium:</p>
+                                        <p class="text-2xl font-bold text-blue-600">$<span id="monthly-estimate">--</span>/mo</p>
+                                        <p class="text-xs text-gray-600 mt-2">Annual: $<span id="annual-estimate">--</span></p>
+                                        <hr class="my-3 border-gray-300">
+                                        <p class="text-xs text-gray-500 italic">*Based on NC averages for liability coverage. Your actual rate will depend on coverage levels, vehicle, credit, and other factors.</p>
+                                        <a href="https://billlayneinsurance.com/auto-quote.html" class="btn-secondary w-full block text-center mt-3 text-sm">
+                                            Get Accurate Quote
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Savings Badge -->
+                            <div class="trust-badge text-center">
+                                <div class="text-4xl font-black text-green-600 mb-2">$847</div>
+                                <p class="text-gray-700 font-semibold">Average Annual<br>Customer Savings</p>
+                            </div>
+                            
+                            <!-- Popular Discounts -->
+                            <div class="trust-badge">
+                                <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                    <i class="fas fa-tag text-blue-600 mr-2"></i>
+                                    Your Potential Discounts
+                                </h4>
+                                <ul class="text-sm text-gray-600 space-y-2">
+                                    <li>✓ Multi-Policy Bundle: up to 25%</li>
+                                    <li>✓ Safe Driver: up to 20%</li>
+                                    <li>✓ Good Student: up to 15%</li>
+                                    <li>✓ Multi-Vehicle: up to 20%</li>
+                                    <li>✓ Anti-Theft: up to 10%</li>
+                                    <li>✓ Defensive Driving: up to 10%</li>
+                                </ul>
+                            </div>
+                            
+                            <!-- Quick Help -->
+                            <div class="trust-badge text-center">
+                                <h4 class="font-bold text-gray-800 mb-4">Need Help Now?</h4>
+                                <a href="tel:3368351993" class="btn-primary w-full block mb-3">
+                                    <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+                                </a>
+                                <p class="text-xs text-gray-600">Instant quotes by phone<br>Mon-Fri 9AM-5PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Content - F-Pattern Right Side -->
+                    <div class="lg:col-span-8">
+                        <!-- Coverage Options Section -->
+                        <div id="coverage" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                                Understanding Your Coverage Options
+                            </h2>
+                            <p class="text-xl text-gray-600 mb-8">
+                                North Carolina requires specific coverage, but the right protection goes beyond minimums. Let's find what works for you.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="coverage-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-car text-blue-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Liability Coverage</h3>
+                                            <p class="text-gray-600 mb-3">Required by NC law. Covers damage and injuries you cause to others.</p>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Bodily Injury: $50k/$100k minimum</li>
+                                                <li>• Property Damage: $50k minimum</li>
+                                                <li>• Protects your assets from lawsuits</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="coverage-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-shield-alt text-green-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Comprehensive</h3>
+                                            <p class="text-gray-600 mb-3">Protection against non-collision damage to your vehicle.</p>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Theft and vandalism</li>
+                                                <li>• Weather damage (hail, floods)</li>
+                                                <li>• Animal collisions</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="coverage-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-car-crash text-purple-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Collision</h3>
+                                            <p class="text-gray-600 mb-3">Covers damage to your car from accidents, regardless of fault.</p>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Accident damage</li>
+                                                <li>• Single-car accidents</li>
+                                                <li>• Hit-and-run incidents</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="coverage-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-user-shield text-orange-600 text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Uninsured Motorist</h3>
+                                            <p class="text-gray-600 mb-3">Required in NC. Protects when at-fault driver has no insurance.</p>
+                                            <ul class="text-sm text-gray-600 space-y-1">
+                                                <li>• Medical expenses</li>
+                                                <li>• Lost wages</li>
+                                                <li>• Property damage</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NC Requirements Section -->
+                        <div id="nc-requirements" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
+                                North Carolina Minimum Requirements
+                            </h2>
+                            
+                            <div class="bg-blue-50 rounded-xl p-8 mb-8">
+                                <h3 class="text-xl font-bold text-gray-800 mb-4">State Minimums (50/100/50)</h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <p class="font-semibold text-gray-700 mb-2">Required Coverage:</p>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>📌 <strong>$50,000</strong> Bodily Injury per person</li>
+                                            <li>📌 <strong>$100,000</strong> Bodily Injury per accident</li>
+                                            <li>📌 <strong>$50,000</strong> Property Damage</li>
+                                            <li>📌 <strong>$50,000/$100,000</strong> Uninsured Motorist</li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <p class="font-semibold text-gray-700 mb-2">Penalties for No Insurance:</p>
+                                        <ul class="space-y-2 text-gray-600">
+                                            <li>⚠️ $50-$150 fine first offense</li>
+                                            <li>⚠️ License suspension possible</li>
+                                            <li>⚠️ SR-22 requirement (3 years)</li>
+                                            <li>⚠️ Higher future rates</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="mt-6 p-4 bg-yellow-100 rounded-lg">
+                                    <p class="text-sm text-yellow-800">
+                                        <strong>Pro Tip:</strong> While these are minimums, most accidents exceed these limits. Consider 100/300/100 coverage to better protect your assets.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Discounts Section -->
+                        <div id="discounts" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
+                                Maximize Your Savings
+                            </h2>
+                            
+                            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-8">
+                                <p class="text-xl text-gray-700 mb-6 font-semibold">
+                                    Most drivers qualify for multiple discounts - average total savings of 25-40%
+                                </p>
+                                
+                                <div class="grid md:grid-cols-2 gap-8">
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-4 text-blue-900">Driver Discounts</h4>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Safe Driver:</strong> 3+ years clean (20% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Good Student:</strong> B average (15% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Defensive Driving:</strong> Course completion (10% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Military:</strong> Active/veteran (15% off)
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-lg mb-4 text-blue-900">Policy Discounts</h4>
+                                        <ul class="space-y-3">
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Bundle:</strong> Auto + Home (25% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Multi-Vehicle:</strong> 2+ cars (20% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Pay in Full:</strong> Annual payment (10% off)
+                                                </div>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <span class="text-green-500 mr-2">✓</span>
+                                                <div>
+                                                    <strong>Low Mileage:</strong> Under 7,500/year (15% off)
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-8 text-center">
+                                    <a href="https://billlayneinsurance.com/auto-quote.html" class="btn-primary">
+                                        Check Your Discount Eligibility
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Section -->
+                        <div id="faq" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-8">
+                                Common Auto Insurance Questions
+                            </h2>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white rounded-lg p-6 shadow-md">
+                                    <h3 class="font-bold text-lg mb-3">How much auto insurance do I really need?</h3>
+                                    <p class="text-gray-600">While NC requires 50/100/50 coverage, we recommend at least 100/300/100 to protect your assets. If you own a home or have savings, consider even higher limits plus an umbrella policy.</p>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-6 shadow-md">
+                                    <h3 class="font-bold text-lg mb-3">Should I get comprehensive and collision coverage?</h3>
+                                    <p class="text-gray-600">If your vehicle is worth more than $4,000 or you can't afford to replace it, these coverages are worth it. For newer vehicles or if you have a loan, they're typically required.</p>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-6 shadow-md">
+                                    <h3 class="font-bold text-lg mb-3">What affects my insurance rates in North Carolina?</h3>
+                                    <p class="text-gray-600">Your driving record, age, location, vehicle type, credit score, and coverage levels all impact rates. North Carolina also uses a "Safe Driver Incentive Plan" that can increase rates for violations.</p>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-6 shadow-md">
+                                    <h3 class="font-bold text-lg mb-3">How can I lower my premium?</h3>
+                                    <p class="text-gray-600">Bundle policies, maintain a clean driving record, improve your credit, increase deductibles wisely, and ask about all available discounts. Shopping around annually is also key - rates vary significantly between companies.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                        Helpful Resources & Tools
+                    </h2>
+                    <p class="text-xl text-gray-600">Everything you need to make informed insurance decisions</p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="service-card text-center">
+                        <div class="text-4xl mb-4">📚</div>
+                        <h3 class="text-xl font-bold mb-3">Insurance Guides</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="first_time_buyers_guide_page.html" class="hover:text-blue-600">First-Time Buyer's Guide</a></li>
+                            <li><a href="understanding_your_policy_guide.html" class="hover:text-blue-600">Understanding Your Policy</a></li>
+                            <li><a href="claims_process_guide.html" class="hover:text-blue-600">Claims Process Explained</a></li>
+                            <li><a href="./coverage_comparison_chart.html" class="hover:text-blue-600">Coverage Comparison Chart</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card text-center">
+                        <div class="text-4xl mb-4">🔧</div>
+                        <h3 class="text-xl font-bold mb-3">Tools & Calculators</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="#coverage" class="hover:text-blue-600">Coverage Analyzer</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Premium Calculator</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Deductible Comparison</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Accident Cost Estimator</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card text-center">
+                        <div class="text-4xl mb-4">📞</div>
+                        <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li><a href="https://www.ncdot.gov/dmv/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600">NC DMV Website</a></li>
+                            <li><a href="https://billlayne.github.io/Insurance-Contact-Information/" class="hover:text-blue-600">File a Claim</a></li>
+                            <li><a href="https://billlayne.github.io/Insurance-Contact-Information/" class="hover:text-blue-600">Policy Service Center</a></li>
+                            <li><a href="https://billlayne.github.io/Insurance-Contact-Information/" class="hover:text-blue-600">Emergency Roadside</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section class="py-20 bg-blue-600 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                    Ready to Save on Auto Insurance?
+                </h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Join thousands of North Carolina drivers who save an average of $847/year
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="tel:3368351993" class="btn-secondary text-lg">
+                        <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+                    </a>
+                    <span class="text-blue-200">or</span>
+                    <a href="https://billlayneinsurance.com/auto-quote.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i>Get Free Quote Online
+                    </a>
+                </div>
+                
+                <div class="mt-8 text-blue-200">
+                    <p class="mb-2">
+                        <i class="fas fa-map-marker-alt mr-2"></i>
+                        1283 N Bridge St, Elkin, NC 28621
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope mr-2"></i>
+                        Save@BillLayneInsurance.com
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Bill Layne Insurance</h3>
+                    <p class="text-gray-400 mb-4">Your local independent insurance agency specializing in auto insurance for North Carolina drivers.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/dollarbillagency/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.google.com/maps/place/Bill+Layne+Insurance+Agency" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-google"></i></a>
+                        <a href="https://www.yelp.com/biz/bill-layne-insurance-agency-elkin" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Coverage Types</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#coverage" class="hover:text-white">Liability Coverage</a></li>
+                        <li><a href="#coverage" class="hover:text-white">Comprehensive</a></li>
+                        <li><a href="#coverage" class="hover:text-white">Collision</a></li>
+                        <li><a href="#coverage" class="hover:text-white">Uninsured Motorist</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#discounts" class="hover:text-white">Available Discounts</a></li>
+                        <li><a href="#nc-requirements" class="hover:text-white">NC Requirements</a></li>
+                        <li><a href="#faq" class="hover:text-white">FAQ</a></li>
+                        <li><a href="https://billlayne.github.io/NC-Insurance-Claims-Center.github.io/" class="hover:text-white">Claims Center</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i>(336) 835-1993</li>
+                        <li><i class="fas fa-envelope mr-2"></i>Save@BillLayneInsurance.com</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>1283 N Bridge St<br>Elkin, NC 28621</li>
+                        <li><i class="fas fa-clock mr-2"></i>Mon-Fri: 9AM-5PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Bill Layne Insurance Agency. All rights reserved. | NC License #1740293</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Universal menu functionality
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const navigationMenu = document.getElementById('navigation-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        function toggleMenu() {
+            menuToggleBtn.classList.toggle('active');
+            navigationMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navigationMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            menuToggleBtn.classList.remove('active');
+            navigationMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggleBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        // Close menu when clicking on internal navigation links
+        const menuNavLinks = navigationMenu.querySelectorAll('a[href^="#"], a[href*="Auto-Insurance-Center"]');
+        menuNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Smooth scrolling for internal anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.getElementById('main-header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all service cards and trust badges
+        document.querySelectorAll('.service-card, .trust-badge, .coverage-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Rate Estimator Calculator
+        function calculateEstimate() {
+            const age = document.getElementById('age-select').value;
+            const record = document.getElementById('record-select').value;
+            
+            if (!age || !record) {
+                alert('Please select both your age and driving record to get an estimate.');
+                return;
+            }
+            
+            // Base rates based on NC averages (monthly)
+            const baseRates = {
+                '16-25': 185,
+                '26-35': 125,
+                '36-50': 95,
+                '51-65': 85,
+                '65+': 90
+            };
+            
+            // Multipliers based on driving record
+            const recordMultipliers = {
+                'clean': 1.0,
+                'minor': 1.25,
+                'accident': 1.45,
+                'multiple': 1.85
+            };
+            
+            // Calculate estimate
+            let baseRate = baseRates[age];
+            let multiplier = recordMultipliers[record];
+            let monthlyEstimate = Math.round(baseRate * multiplier);
+            let annualEstimate = monthlyEstimate * 12;
+            
+            // Add some variance to make it seem more realistic (+/- 10%)
+            const variance = (Math.random() * 0.2 - 0.1);
+            monthlyEstimate = Math.round(monthlyEstimate * (1 + variance));
+            annualEstimate = monthlyEstimate * 12;
+            
+            // Display results
+            document.getElementById('monthly-estimate').textContent = monthlyEstimate;
+            document.getElementById('annual-estimate').textContent = annualEstimate.toLocaleString();
+            document.getElementById('estimate-result').classList.remove('hidden');
+            
+            // Smooth scroll to show results
+            document.getElementById('estimate-result').scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest' 
+            });
+        }
+    </script>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "name": "Bill Layne Insurance Agency - Auto Insurance Center",
+      "url": "https://billlayne.github.io/Auto-Insurance-Center/",
+      "telephone": "+13368351993",
+      "email": "Save@BillLayneInsurance.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1283 N Bridge St",
+        "addressLocality": "Elkin",
+        "addressRegion": "NC",
+        "postalCode": "28621",
+        "addressCountry": "US"
+      },
+      "areaServed": ["Elkin", "Mount Airy", "Jonesville", "Surry County", "Yadkin County", "Wilkes County"],
+      "serviceType": ["Auto Insurance", "Car Insurance", "Vehicle Insurance"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "ratingCount": "127"
+      }
+    }
+    </script>
+</body>
+</html>
