@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Layne Insurance Agency - Auto & Home Insurance in Elkin, NC</title>
+    <meta name="description" content="Save money on auto, home & business insurance in Elkin, NC. Independent agency with 20+ years serving North Carolina. Get your free quote today - (336) 835-1993.">
+    
+    <!-- SEO Meta Tags -->
+    <link rel="canonical" href="https://www.billlayneinsurance.com/">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Bill Layne Insurance Agency - Auto & Home Insurance in Elkin, NC">
+    <meta property="og:description" content="Independent insurance agency serving Elkin, Mount Airy & Surry County. Compare quotes from top carriers. Call (336) 835-1993.">
+    <meta property="og:url" content="https://www.billlayneinsurance.com/">
+    <meta property="og:image" content="https://www.billlayneinsurance.com/images/bill-layne-insurance-logo.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            important: true,
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* F-Pattern Optimized Styles */
+        :root {
+            --primary-blue: #2563eb;
+            --primary-blue-dark: #1d4ed8;
+            --accent-green: #10b981;
+            --text-gray: #374151;
+            --text-light: #6b7280;
+            --bg-light: #f8fafc;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--text-gray);
+        }
+        
+        /* F-Pattern Header - Top horizontal bar */
+        .f-header {
+            background: white;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            transition: all 0.3s ease;
+        }
+        
+        .f-header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* --- HERO SECTION REFINEMENTS --- */
+        .f-hero {
+            background-image: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 58, 138, 0.98) 100%), url('https://placehold.co/1920x1080/334155/64748B?text=NC+Landscape');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 140px; /* Adjusted padding */
+        }
+
+        @media (min-width: 768px) {
+            .f-hero {
+                padding-top: 120px;
+            }
+        }
+        
+        /* --- NEW: Interactive Quote Starter --- */
+        .quote-starter-wrapper {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            max-w-2xl;
+            mx-auto;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-starter-title {
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .quote-type-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .quote-type-btn {
+            background-color: rgba(37, 99, 235, 0.9); /* primary-blue with opacity */
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .quote-type-btn:hover {
+            transform: translateY(-4px);
+            background-color: var(--primary-blue-dark);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote-type-btn i {
+            font-size: 1.75rem; /* text-3xl */
+        }
+
+        /* --- END HERO REFINEMENTS --- */
+
+        /* F-Pattern Left Sidebar - Vertical emphasis */
+        .f-sidebar {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+        
+        /* Modern Gradient Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, #1e40af 100%);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.7);
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Trust Indicators */
+        .trust-badge {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Universal Menu (Mobile & Desktop) */
+        .navigation-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 350px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding: 20px;
+        }
+        
+        .navigation-menu.active {
+            right: 0;
+        }
+        
+        /* Desktop menu adjustments */
+        @media (min-width: 768px) {
+            .navigation-menu {
+                max-width: 400px;
+                padding: 30px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .navigation-menu {
+                max-width: 450px;
+                padding: 40px;
+            }
+        }
+        
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hamburger Animation */
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--text-gray);
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+        
+        /* Form Styles */
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        /* Trust Indicators Grid - Combined for better mobile view */
+        .trust-indicators-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem 1.5rem; /* row-gap, column-gap */
+            font-size: 0.8rem;
+            color: #cbd5e1;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .trust-indicators-grid {
+                gap: 2.5rem;
+                font-size: 1rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .f-sidebar {
+                position: static;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 12px 20px;
+                font-size: 15px;
+            }
+        }
+        
+        /* Carriers Grid Layout */
+        .carriers-grid {
+            display: grid;
+            gap: 1.5rem;
+            justify-items: center;
+            align-items: center;
+        }
+        
+        /* Desktop: Single row with 8 items */
+        @media (min-width: 1024px) {
+            .carriers-grid {
+                grid-template-columns: repeat(8, 1fr);
+                max-width: 100%;
+            }
+        }
+        
+        /* Tablet: 4 columns */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .carriers-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Mobile: 2 columns */
+        @media (max-width: 767px) {
+            .carriers-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+        
+        /* Logo Containers */
+        a.logo-container, .logo-container {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 140px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+        
+        /* Mobile adjustments */
+        @media (max-width: 767px) {
+            a.logo-container, .logo-container {
+                max-width: 100%;
+                height: 70px;
+            }
+        }
+        
+        a.logo-container:hover, .logo-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .logo-container img {
+            max-width: 90%;
+            max-height: 90%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            transform: scale(1.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container:hover img {
+            transform: scale(1.4);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            border-bottom: 1px solid #e5e7eb;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Menu Overlay -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+    
+    <!-- Header - F-Pattern Top Bar -->
+    <header id="main-header" class="f-header">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="text-2xl font-bold text-blue-800">
+                        Bill Layne Insurance
+                    </a>
+                    <p class="text-xs text-gray-600 hidden sm:block">Protecting NC For 20+ Years</p>
+                </div>
+                
+                <!-- Right Side: Phone, CTA, and Menu Button -->
+                <div class="flex items-center space-x-4">
+                    <!-- Desktop CTA -->
+                    <div class="hidden md:flex items-center space-x-4">
+                        <a href="tel:3368351993" class="text-gray-700 font-semibold hover:text-blue-600 transition-colors">
+                            <i class="fas fa-phone mr-2"></i>(336) 835-1993
+                        </a>
+                        <a href="auto-quote.html" class="btn-primary">Get Free Quote</a>
+                    </div>
+                    
+                    <!-- Universal Menu Button -->
+                    <button id="menu-toggle-btn" class="hamburger p-2">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Universal Menu -->
+    <div id="navigation-menu" class="navigation-menu">
+        <div class="flex justify-between items-center mb-8">
+            <h3 class="text-xl lg:text-2xl font-bold text-gray-800">Navigation</h3>
+            <button id="close-menu" class="text-gray-500 hover:text-gray-700 p-2">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+        </div>
+        <nav class="space-y-4">
+            <a href="index.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-home mr-3 w-5"></i>Home
+            </a>
+            <a href="areas-we-serve.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-th-large mr-3 w-5"></i>Services
+            </a>
+            <a href="https://billlayne.github.io/Auto-Insurance-Center/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-car mr-3 w-5"></i>Auto Insurance
+            </a>
+            <a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-home mr-3 w-5"></i>Home Insurance
+            </a>
+            <a href="https://billlayne.github.io/NC-Insurance-Claims-Center.github.io/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-file-alt mr-3 w-5"></i>Claims Center
+            </a>
+            <a href="https://billlayne.github.io/Resources/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-book mr-3 w-5"></i>Resources
+            </a>
+            <a href="https://billlayne.github.io/ethereal-blog-landing/" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-blog mr-3 w-5"></i>Blog
+            </a>
+            <a href="contact-us.html" class="block py-3 px-2 text-gray-700 hover:text-blue-600 hover:bg-blue-50 font-medium border-b border-gray-200 rounded transition-all">
+                <i class="fas fa-envelope mr-3 w-5"></i>Contact Us
+            </a>
+        </nav>
+        <div class="mt-8 space-y-4">
+            <a href="tel:3368351993" class="block w-full text-center bg-green-600 hover:bg-green-700 text-white py-3 px-4 rounded-lg font-semibold transition-colors">
+                <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+            </a>
+            <a href="auto-quote.html" class="block w-full text-center btn-primary">
+                <i class="fas fa-calculator mr-2"></i>Get Free Quote
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <!-- === NEW HERO SECTION === -->
+        <section class="f-hero pb-12 sm:pb-20 lg:pb-24 text-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="animate-fade-in-up">
+                    <!-- Trust-building pre-headline -->
+                    <p class="text-sm sm:text-base font-semibold text-blue-200 uppercase tracking-wider mb-2">
+                        Trusted by 1,000+ Families
+                    </p>
+
+                    <!-- More direct, location-focused headline -->
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] sm:leading-tight mb-4">
+                        Better Insurance for<br class="hidden sm:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">
+                            North Carolina
+                        </span>
+                    </h1>
+                    
+                    <!-- Punchier sub-headline -->
+                    <p class="text-base sm:text-xl lg:text-2xl text-blue-100 mb-6 leading-snug sm:leading-relaxed max-w-4xl mx-auto">
+                        We compare 10+ top carriers to find you the best Auto & Home coverage at a price you'll love.
+                    </p>
+                    
+                    <!-- Interactive "Quote Starter" to engage users immediately -->
+                    <div class="quote-starter-wrapper max-w-2xl mx-auto">
+                        <h2 class="quote-starter-title">What can we help you with today?</h2>
+                        <div class="quote-type-buttons">
+                            <a href="https://billlayne.github.io/Auto-Insurance-Center/" class="quote-type-btn">
+                                <i class="fas fa-car"></i>
+                                <span>Auto Insurance</span>
+                            </a>
+                            <a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="quote-type-btn">
+                                <i class="fas fa-home"></i>
+                                <span>Home Insurance</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Secondary CTA for users who prefer to call -->
+                    <p class="mt-6 text-blue-200">
+                        Prefer to talk? <a href="tel:3368351993" class="font-bold text-white hover:underline">Call us at (336) 835-1993</a>
+                    </p>
+
+                    <!-- Consolidated trust indicators for a cleaner look -->
+                    <div class="trust-indicators-grid">
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-star text-yellow-400 mr-2"></i>
+                            <span class="font-semibold">4.8★ from 127+ Families</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-green-400 mr-2"></i>
+                            <span>NC Licensed & Insured</span>
+                        </div>
+                        <div class="flex items-center justify-center">
+                            <i class="fas fa-users text-blue-300 mr-2"></i>
+                            <span>20+ Years Serving NC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- === END NEW HERO SECTION === -->
+
+        <!-- Carriers Section -->
+        <section class="py-16 bg-gradient-to-b from-gray-50 to-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-3">
+                        We Compare Quotes From <span class="text-blue-600">Top-Rated Carriers</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Access exclusive rates from 10+ trusted insurance companies. One quote, multiple options, guaranteed savings.
+                    </p>
+                </div>
+                <div class="carriers-grid">
+                    <a href="carriers/nationwide-north-carolina.html" class="logo-container" title="Nationwide Insurance North Carolina"><img src="images/Nationwide.webp" alt="Nationwide Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Nationwide';"></a>
+                    <a href="carriers/progressive-north-carolina.html" class="logo-container" title="Progressive Insurance North Carolina"><img src="images/Progressive.webp" alt="Progressive Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Progressive';"></a>
+                    <a href="carriers/national-general-north-carolina.html" class="logo-container" title="National General Insurance North Carolina"><img src="images/National General.webp" alt="National General Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=NatGen';"></a>
+                    <a href="carriers/travelers-north-carolina.html" class="logo-container" title="Travelers Insurance North Carolina"><img src="images/Travelers.webp" alt="Travelers Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Travelers';"></a>
+                    <a href="carriers/alamance-north-carolina.html" class="logo-container" title="Alamance Insurance North Carolina"><img src="images/Alamance.webp" alt="Alamance Farmers Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Alamance';"></a>
+                    <a href="carriers/nc-grange-north-carolina.html" class="logo-container" title="NC Grange Insurance"><img src="images/NC Grange.webp" alt="NC Grange Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=NC+Grange';"></a>
+                    <a href="carriers/foremost-north-carolina.html" class="logo-container" title="Foremost Insurance North Carolina"><img src="images/Foremost.webp" alt="Foremost Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Foremost';"></a>
+                    <a href="carriers/hagerty-north-carolina.html" class="logo-container" title="Hagerty Classic Car Insurance"><img src="images/Hagerty.webp" alt="Hagerty Classic Car Insurance" loading="lazy" onerror="this.onerror=null;this.src='https://placehold.co/140x80/ffffff/cccccc?text=Hagerty';"></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NEW VISUAL WHY CHOOSE US SECTION === -->
+        <section id="why-us-visual" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+                        The Independent Advantage
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-12 max-w-3xl mx-auto">
+                        We work for you, not the insurance companies. That means more options, unbiased advice, and a local agent who's always in your corner.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-handshake text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Local & Personal</h3>
+                        <p class="text-gray-600">We're your neighbors, not a call center. When you call, you talk to someone who knows your name and your needs.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-search text-green-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">We Shop For You</h3>
+                        <p class="text-gray-600">As an independent agency, we compare quotes from multiple top carriers to find you the best coverage at the best price.</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Claims Advocacy</h3>
+                        <p class="text-gray-600">If you need to file a claim, we're here to help. We work with the insurance company on your behalf to ensure a fair outcome.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- F-Pattern Content Layout -->
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    <!-- Left Sidebar - F-Pattern Vertical Emphasis -->
+                    <div class="lg:col-span-4">
+                        <div class="f-sidebar space-y-8">
+                            <div class="trust-badge text-center">
+                                <div class="grid grid-cols-3 gap-2">
+                                    <div>
+                                        <div class="text-4xl font-black text-blue-600">10+</div>
+                                        <p class="text-xs text-gray-700 font-semibold">Top<br>Carriers</p>
+                                    </div>
+                                    <div>
+                                        <div class="text-4xl font-black text-blue-600">20+</div>
+                                        <p class="text-xs text-gray-700 font-semibold">Years Serving<br>North Carolina</p>
+                                    </div>
+                                    <div>
+                                        <div class="text-4xl font-black text-blue-600">15</div>
+                                        <p class="text-xs text-gray-700 font-semibold">Minute<br>Quotes</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="trust-badge">
+                                <h4 class="font-bold text-gray-800 mb-4 text-center text-lg"><i class="fas fa-map-marker-alt text-blue-600 mr-2"></i>We Proudly Serve</h4>
+                                <div class="grid grid-cols-2 gap-2 text-center">
+                                    <a href="https://billlayne.github.io/Save-In-Elkin-NC/" target="_blank" class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors block">
+                                        <p class="text-sm font-semibold text-gray-800">Elkin, NC</p>
+                                    </a>
+                                    <a href="https://billlayne.github.io/Save-In-Mt-Airy/" target="_blank" class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors block">
+                                        <p class="text-sm font-semibold text-gray-800">Mount Airy</p>
+                                    </a>
+                                    <a href="https://billlayne.github.io/Save-In-Jonesville-NC/" target="_blank" class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors block">
+                                        <p class="text-sm font-semibold text-gray-800">Jonesville</p>
+                                    </a>
+                                    <div class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors">
+                                        <p class="text-sm font-semibold text-gray-800">Surry County</p>
+                                    </div>
+                                    <div class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors">
+                                        <p class="text-sm font-semibold text-gray-800">Yadkin County</p>
+                                    </div>
+                                    <div class="bg-blue-50 rounded-lg py-2 px-3 hover:bg-blue-100 transition-colors">
+                                        <p class="text-sm font-semibold text-gray-800">Wilkes County</p>
+                                    </div>
+                                </div>
+                                <p class="text-xs text-center text-gray-600 mt-3 font-medium">+ Surrounding Areas</p>
+                            </div>
+                            <div class="trust-badge text-center">
+                                <h4 class="font-bold text-gray-800 mb-4">Need Help Now?</h4>
+                                <a href="tel:3368351993" class="btn-primary w-full block mb-3"><i class="fas fa-phone mr-2"></i>Call (336) 835-1993</a>
+                                <p class="text-xs text-gray-600">Office: Mon-Fri 9AM-5PM<br>Claims: 24/7 Support</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Main Content - F-Pattern Right Side -->
+                    <div class="lg:col-span-8">
+                        <!-- Services Section -->
+                        <div id="services" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4 text-center">Insurance That Actually Makes Sense</h2>
+                            <p class="text-xl text-gray-600 mb-8 text-center max-w-3xl mx-auto">We explain everything in plain English and find you the best coverage at the best price. No confusing jargon, no pushy sales tactics.</p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="service-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-car text-blue-600 text-xl"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Auto Insurance</h3>
+                                            <p class="text-gray-600 mb-4">Comprehensive coverage that protects you and saves you money. We'll review your current policy and find better rates.</p>
+                                            <a href="https://billlayne.github.io/Auto-Insurance-Center/" class="text-blue-600 font-semibold hover:text-blue-700">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-home text-green-600 text-xl"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Home Insurance</h3>
+                                            <p class="text-gray-600 mb-4">Protect your most valuable investment. We'll make sure you have the right coverage for North Carolina's unique risks.</p>
+                                            <a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="text-blue-600 font-semibold hover:text-blue-700">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-briefcase text-purple-600 text-xl"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Business Insurance</h3>
+                                            <p class="text-gray-600 mb-4">Comprehensive protection for your business. From general liability to workers' comp, we've got you covered.</p>
+                                            <a href="areas-we-serve.html#business" class="text-blue-600 font-semibold hover:text-blue-700">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="service-card">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4"><i class="fas fa-motorcycle text-orange-600 text-xl"></i></div>
+                                        <div>
+                                            <h3 class="text-xl font-bold text-gray-800 mb-2">Specialty Coverage</h3>
+                                            <p class="text-gray-600 mb-4">Motorcycles, RVs, boats, and more. Whatever you need to insure, we'll find the right coverage.</p>
+                                            <a href="areas-we-serve.html#specialty" class="text-blue-600 font-semibold hover:text-blue-700">Learn More →</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Customer Stories -->
+                        <div id="testimonials" class="mb-16">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-8 text-center">What Our Neighbors Say</h2>
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-white rounded-xl p-6 shadow-lg">
+                                    <div class="flex items-center mb-4">
+                                        <div class="text-yellow-400 mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <span class="text-sm text-gray-600">5/5 Stars</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-4 italic">"Bill and his team saved me over $800 a year on my car and home insurance. The service is outstanding - they actually answer the phone when you call!"</p>
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3"><i class="fas fa-user text-blue-600"></i></div>
+                                        <div>
+                                            <p class="font-semibold text-gray-800">Sarah M.</p>
+                                            <p class="text-sm text-gray-600">Elkin Resident</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bg-white rounded-xl p-6 shadow-lg">
+                                    <div class="flex items-center mb-4">
+                                        <div class="text-yellow-400 mr-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                        <span class="text-sm text-gray-600">5/5 Stars</span>
+                                    </div>
+                                    <p class="text-gray-700 mb-4 italic">"When we had a claim last year, Bill walked us through everything and made sure we got every penny we deserved. Can't recommend them enough!"</p>
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3"><i class="fas fa-users text-green-600"></i></div>
+                                        <div>
+                                            <p class="font-semibold text-gray-800">The Johnson Family</p>
+                                            <p class="text-sm text-gray-600">Mount Airy Residents</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="text-center mt-8">
+                                <a href="https://www.google.com/search?q=Bill+Layne+Insurance+Elkin+NC+reviews" target="_blank" rel="noopener noreferrer" class="btn-primary" style="padding: 14px 28px; background: white; color: var(--primary-blue); border: 2px solid var(--primary-blue);"><i class="fab fa-google mr-2"></i>Read More Reviews</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- === NEW FAQ SECTION === -->
+        <section id="faq" class="py-20 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl lg:text-4xl font-bold text-gray-800">Frequently Asked Questions</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="faq-item bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">How does an independent agent save me money?</h3>
+                        <p class="text-gray-600">Unlike captive agents who work for one company, we partner with over 10 top-rated insurance carriers. We do the shopping for you, comparing policies and prices to find the perfect fit for your needs and budget, often uncovering savings you wouldn't find on your own.</p>
+                    </div>
+                    <div class="faq-item bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">What do I need to get a quote?</h3>
+                        <p class="text-gray-600">For an auto quote, you'll typically need your driver's license number, vehicle information (VIN), and details about your driving history. For a home quote, we'll need the property address and some basic information about the house. The whole process is quick and we can walk you through it over the phone in about 15 minutes!</p>
+                    </div>
+                    <div class="faq-item bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-semibold text-lg text-gray-800 mb-2">Can you help me switch from my current insurer?</h3>
+                        <p class="text-gray-600">Absolutely! We make switching easy. Once we find you a better policy, we'll help you handle all the paperwork to cancel your old policy and ensure there are no gaps in your coverage. Our goal is to make the transition seamless and stress-free.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA Section -->
+        <section id="contact" class="py-20 bg-blue-600 text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                    Ready to Save on Your Insurance?
+                </h2>
+                <p class="text-xl text-blue-100 mb-8">
+                    Join over 1,000 families across North Carolina who trust us with their insurance needs.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="tel:3368351993" class="btn-primary" style="background: white; color: var(--primary-blue); border: 2px solid white; padding: 14px 28px;">
+                        <i class="fas fa-phone mr-2"></i>Call (336) 835-1993
+                    </a>
+                    <span class="text-blue-200">or</span>
+                    <a href="auto-quote.html" class="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-calculator mr-2"></i>Get Free Quote Online
+                    </a>
+                </div>
+                
+                <div class="mt-8 text-blue-200">
+                    <p class="mb-2">
+                        <a href="https://www.google.com/maps/search/?api=1&query=1283+N+Bridge+St,+Elkin,+NC+28621" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                            <i class="fas fa-map-marker-alt mr-2"></i>
+                            1283 N Bridge St, Elkin, NC 28621
+                        </a>
+                    </p>
+                    <p>
+                        <a href="mailto:Save@BillLayneInsurance.com" class="hover:underline">
+                            <i class="fas fa-envelope mr-2"></i>
+                            Save@BillLayneInsurance.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Bill Layne Insurance</h3>
+                    <p class="text-gray-400 mb-4">Your local independent insurance agency serving North Carolina families and businesses for over 20 years.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/dollarbillagency/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.google.com/maps/place/Bill+Layne+Insurance+Agency/@36.2653,-80.8507,17z/data=!3m1!4b1!4m6!3m5!1s0x8851ab7bb1cf3bbf:0xc55b0a3d87e4ca10!8m2!3d36.2653!4d-80.8481!16s%2Fg%2F1tdbx99h" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-google"></i></a>
+                        <a href="https://www.yelp.com/biz/bill-layne-insurance-agency-elkin" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white"><i class="fab fa-yelp"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="https://billlayne.github.io/Auto-Insurance-Center/" class="hover:text-white">Auto Insurance</a></li>
+                        <li><a href="https://billlayne.github.io/NC-Home-Insurance.github.io/" class="hover:text-white">Home Insurance</a></li>
+                        <li><a href="areas-we-serve.html#business" class="hover:text-white">Business Insurance</a></li>
+                        <li><a href="areas-we-serve.html#life" class="hover:text-white">Life Insurance</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Coverage Areas</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Elkin, NC</li>
+                        <li>Mount Airy, NC</li>
+                        <li>Jonesville, NC</li>
+                        <li>Surry County</li>
+                        <li>Yadkin County</li>
+                        <li>Wilkes County</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="tel:3368351993" class="hover:text-white"><i class="fas fa-phone mr-2"></i>(336) 835-1993</a></li>
+                        <li><a href="mailto:Save@BillLayneInsurance.com" class="hover:text-white"><i class="fas fa-envelope mr-2"></i>Save@BillLayneInsurance.com</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=1283+N+Bridge+St,+Elkin,+NC+28621" target="_blank" rel="noopener noreferrer" class="hover:text-white"><i class="fas fa-map-marker-alt mr-2"></i>1283 N Bridge St<br><span class="ml-6">Elkin, NC 28621</span></a></li>
+                        <li><i class="fas fa-clock mr-2"></i>Mon-Fri: 9AM-5PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Bill Layne Insurance Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Universal menu functionality (Mobile & Desktop)
+        const menuToggleBtn = document.getElementById('menu-toggle-btn');
+        const navigationMenu = document.getElementById('navigation-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenuBtn = document.getElementById('close-menu');
+
+        function toggleMenu() {
+            menuToggleBtn.classList.toggle('active');
+            navigationMenu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navigationMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        function closeMenu() {
+            menuToggleBtn.classList.remove('active');
+            navigationMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        menuToggleBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+    </script>
+
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "InsuranceAgency",
+      "name": "Bill Layne Insurance Agency",
+      "image": "https://www.billlayneinsurance.com/images/bill-layne-insurance-logo.png",
+      "@id": "https://www.billlayneinsurance.com",
+      "url": "https://www.billlayneinsurance.com",
+      "telephone": "+13368351993",
+      "email": "Save@BillLayneInsurance.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1283 N Bridge St",
+        "addressLocality": "Elkin",
+        "addressRegion": "NC",
+        "postalCode": "28621",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 36.2443,
+        "longitude": -80.8487
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/BillLayneInsurance",
+        "https://www.google.com/maps/place/Bill+Layne+Insurance+Agency"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "127"
+      }
+    }
+    </script>
+</body>
+</html>
+
